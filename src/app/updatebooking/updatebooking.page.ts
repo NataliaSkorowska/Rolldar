@@ -24,7 +24,7 @@ export class UpdatebookingPage implements OnInit {
         description: [data['description']]
       })
     });
-     }
+  }
 
   ngOnInit() {
     this.editForm = this.formBuilder.group({
@@ -32,6 +32,7 @@ export class UpdatebookingPage implements OnInit {
       description: ['']
     })    
   }
+  
   onSubmit() {
     this.crudService.update(this.id, this.editForm.value)
   }

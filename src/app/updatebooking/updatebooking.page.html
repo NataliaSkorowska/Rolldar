@@ -4,19 +4,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content>
   <form [formGroup]="editBooking" (ngSubmit)="onSubmit()">
     <ion-item>
       <ion-label position="floating">Tytuł</ion-label>
       <ion-input formControlName="title" type="text" required></ion-input>
     </ion-item>
-
     <ion-item>
       <ion-label position="floating">Opis</ion-label>
       <ion-input formControlName="description" type="text" required>
       </ion-input>
     </ion-item>
-
-    <ion-button class="ion-margin-top" type="submit" expand="block" color="success">Zatwierdź</ion-button>
+    <ion-button class="ion-margin-top" type="submit" expand="block" color="primary">Zatwierdź</ion-button>
   </form>
 </ion-content>

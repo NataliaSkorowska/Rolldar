@@ -1,17 +1,38 @@
 <ion-header>
  <ion-toolbar color="primary">  
-     <ion-buttons slot="start">  
-       <ion-menu-button color="dark"></ion-menu-button>   
-     </ion-buttons>  
      <ion-title>  
-       Ionic Menu  Example
+       Rolldar
      </ion-title>  
    </ion-toolbar>   
 </ion-header>
-
 <ion-content>
-<ion-button routerLink="/sign-in">
-Klient
-</ion-button>
-
+<div id="container">
+    <ion-grid class="ion-align-items-center">
+      <ion-row>
+        <ion-col>
+          <span>ZALOGUJ SIĘ JAKO </span>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button class="button-add" routerLink="/sign-in">
+            <ion-icon name="add-circle-outline"></ion-icon>&nbsp;
+           Klient
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button class="button-show" routerLink="/employeelogin">
+            <ion-icon name="eye-outline"></ion-icon>&nbsp;
+            Pracownik
+          </ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>   
 </ion-content>

@@ -20,20 +20,14 @@ export class FirebaseAuthService {
   ) {
     this.angularFireAuth.onAuthStateChanged((user) => {
       if (user) {
-        // User is signed in.
         this.currentUser = user;
       } else {
-        // No user is signed in.
         this.currentUser = null;
       }
     });
 
-    
-    
-    // when using signInWithRedirect, this listens for the redirect results
     this.angularFireAuth.getRedirectResult()
     .then((result) => {
-      // result.credential.accessToken gives you the Provider Access Token. You can use it to access the Provider API.
       if (result.user) {
         this.setProviderAdditionalInfo(result.additionalUserInfo.profile);
         this.currentUser = result.user;
@@ -144,4 +138,5 @@ export class FirebaseAuthService {
     const provider = new auth.TwitterAuthProvider();
     return this.socialSignIn(provider.providerId);
   }
+
 }
