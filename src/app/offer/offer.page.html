@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Oferta</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+<ion-searchbar placeholder="Wyszukaj" ></ion-searchbar>
+ <ion-grid>
+    <ion-row>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let blind of blinds">
+        <ion-card 
+           class="img-box"
+           [style.background-image]="'url('+ blind.url +')'"
+           (click) = "goToDetailPage(blind.id)" [item]="blind" >
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+   <ion-tab-button routerLinkActive="tab-selected" routerLink="/booking" tab="todo-list">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>Create</ion-label>
+    </ion-tab-button>
+       <ion-tab-button routerLinkActive="tab-selected" routerLink="/bookings" tab="todo-list">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>Bookings</ion-label>
+    </ion-tab-button>
+</ion-content>

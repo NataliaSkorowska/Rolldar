@@ -1,0 +1,7 @@
+{
+  "name": "rolldar",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,26 @@
+<ion-header>
+ <ion-toolbar>
+    <ion-title>{{blind.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/offer/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-card>
+<ion-slides  [options]="{ slidesPerView:1, autoplay: {delay: 1500} }">
+   <ion-slide>
+       <img src="{{blind.url}}">
+    </ion-slide>
+    <ion-slide>
+       <img src="{{blind.url1}}">
+    </ion-slide>
+</ion-slides>
+</ion-card>
+<ion-card class="detail-info">
+{{blind.info}}
+</ion-card>
+<ion-card class="detail-info">
+{{blind.info1}}
+</ion-card>
+</ion-content>

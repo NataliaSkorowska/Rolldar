@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Zarezerwuj usługę</ion-title>
+       <ion-buttons slot="start">
+      <ion-back-button defaultHref="/offer/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
+    <ion-item>
+      <ion-label  position="floating">Tytuł</ion-label>
+      <ion-input formControlName="title" type="text" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Opis</ion-label>
+      <ion-input formControlName="description" type="text" required>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label >Wybierz usługę</ion-label>
+    <ion-select formControlName="service" name="service">
+     <ion-select-option value="pomiar">Pomiar</ion-select-option>
+    <ion-select-option value="montaż">Montaż</ion-select-option>
+     <ion-select-option value="awaria">Awaria</ion-select-option>
+</ion-select>
+</ion-item>
+    <ion-button class="ion-margin-top" type="submit" expand="block" color="primary">Rezerwuj</ion-button>
+  </form>
+</ion-content>
