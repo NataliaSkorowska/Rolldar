@@ -35,7 +35,10 @@ export class OfferPage implements OnInit {
       console.log('signout error', error);
     });
   }
+
   goToDetailPage(id: number) {
     this.router.navigate(['offer-details', id]);
   }
+
+  
 }

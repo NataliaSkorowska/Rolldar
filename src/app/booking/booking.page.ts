@@ -19,8 +19,10 @@ export class BookingPage implements OnInit {
 
   ngOnInit() {
     this.bookingForm = this.formBuilder.group({
-      title: [''],
-      description: [''],
+      name: [''],
+      address: [''],
+      mobile:[''],
+      email:[''],
       service:['']
     })
   }

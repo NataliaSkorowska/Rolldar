@@ -26,7 +26,6 @@ export class ProfilePage implements OnInit {
 
   signOut() {
     this.authService.signOut().subscribe(() => {
-      // Sign-out successful.
       this.router.navigate(['sign-in']);
     }, (error) => {
       console.log('signout error', error);

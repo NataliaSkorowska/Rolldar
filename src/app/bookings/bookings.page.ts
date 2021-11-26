@@ -51,8 +51,8 @@ export class BookingsPage implements OnInit {
   }
 
   this.Bookings = this.BookingsBackup.filter(currentGoal => {
-     if (currentGoal.title && searchTerm) {
-        if (currentGoal.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
+     if (currentGoal.name && searchTerm) {
+        if (currentGoal.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1) {
            return true;
         }
         return false;

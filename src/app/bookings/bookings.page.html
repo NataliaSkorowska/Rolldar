@@ -4,12 +4,20 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
- <ion-searchbar placeholder="Wyszukaj" showcancelbutton="always" (ionInput)="filterList($event)"></ion-searchbar>
+ <ion-searchbar animated placeholder="Wyszukaj" 
+ inputmode="search"
+ debounce="500"
+ (ionCancel)="onCancel($event)"
+ cancelButtonIcon="close-outline"
+      showCancelButton="focus"
+      showClearButton="focus"
+      cancelButtonText="Cancel"
+  (ionInput)="filterList($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let booking of Bookings " lines="full">
       <ion-label>
-        <strong>{{booking.title}}</strong>
-        <p>{{booking.description}}</p>
+        <strong>{{booking.name}}</strong>
+        <p>{{booking.address}}</p>
       </ion-label>
       <div item-end>
         <button [routerLink]="['/updatebooking/', booking.id]">

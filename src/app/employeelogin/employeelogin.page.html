@@ -1,20 +1,20 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Panel pracownika</ion-title>
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home/"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  
+<ion-content  class="sign-in-content">
   <ion-item>
     <ion-label position="stacked">Email</ion-label>
-    <ion-input type="email" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+    <ion-input type="email"  [(ngModel)]="user.email"></ion-input>
   </ion-item>
-
   <ion-item>
     <ion-label position="stacked">Hasło</ion-label>
-    <ion-input type="password" placeholder="Hasło" [(ngModel)]="user.pw"></ion-input>
+    <ion-input type="password" [(ngModel)]="user.pw"></ion-input>
   </ion-item>
-
   <ion-button expand="block" (click)="signIn()">Zaloguj</ion-button>
 </ion-content>

@@ -7,10 +7,13 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
-<ion-searchbar placeholder="Wyszukaj" ></ion-searchbar>
+ <ion-searchbar
+  placeholder="Wyszukaj" 
+  [(ngModel)]="term" >
+  </ion-searchbar>
  <ion-grid>
     <ion-row>
-      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let blind of blinds">
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let blind of blinds | filter:term">
         <ion-card 
            class="img-box"
            [style.background-image]="'url('+ blind.url +')'"

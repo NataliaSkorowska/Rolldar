@@ -10,12 +10,22 @@
 <ion-content class="ion-padding">
   <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
     <ion-item>
-      <ion-label  position="floating">Tytuł</ion-label>
-      <ion-input formControlName="title" type="text" required></ion-input>
+      <ion-label  position="floating">Imie i nazwisko</ion-label>
+      <ion-input formControlName="name" type="text" required></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Opis</ion-label>
-      <ion-input formControlName="description" type="text" required>
+      <ion-label position="floating">Adres</ion-label>
+      <ion-input formControlName="address" type="text" required>
+      </ion-input>
+    </ion-item>
+     <ion-item>
+      <ion-label position="floating">Numer telefonu</ion-label>
+      <ion-input formControlName="mobile" type="text" required>
+      </ion-input>
+    </ion-item>
+      <ion-item>
+      <ion-label position="floating">Adres email</ion-label>
+      <ion-input formControlName="email" type="text" required>
       </ion-input>
     </ion-item>
     <ion-item>
@@ -24,6 +34,20 @@
     <ion-select-option value="pomiar">Pomiar</ion-select-option>
     <ion-select-option value="montaż">Montaż</ion-select-option>
     <ion-select-option value="awaria">Awaria</ion-select-option>
+</ion-select>
+</ion-item>
+  <ion-item>
+    <ion-label >Rodzaj rolety</ion-label>
+    <ion-select>
+    <ion-select-option value="Moskitiera" >Moskitiera</ion-select-option>
+    <ion-select-option value="Markiza">Markiza</ion-select-option>
+    <ion-select-option value="Żaluzja drewniana">Żaluzja drewniana</ion-select-option>
+     <ion-select-option value="Żaluzja aluminiowa">Żaluzja aluminiowa</ion-select-option>
+    <ion-select-option value="Roleta dzień i noc">Roleta dzień i noc</ion-select-option>
+    <ion-select-option value="Roleta plisowana">Roleta plisowana</ion-select-option>
+    <ion-select-option value="Zasłona">Zasłona</ion-select-option>
+     <ion-select-option value="Brama rolowana">Brama rolowana</ion-select-option>
+    <ion-select-option value="Roleta dzień i noc">Roleta dzień i noc</ion-select-option>
 </ion-select>
 </ion-item>
     <ion-button class="ion-margin-top" type="submit" expand="block" color="primary">Rezerwuj</ion-button>
