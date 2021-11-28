@@ -20,8 +20,8 @@
         <p>{{booking.address}}</p>
       </ion-label>
       <div item-end>
-        <button [routerLink]="['/updatebooking/', booking.id]">
-          <ion-icon name="create" style="zoom:1.5"></ion-icon>
+        <button ion-button clear (click)="goToBookingPage(booking.id)">
+          <ion-icon name="create" style="zoom:2.0"></ion-icon>
         </button>
         <button (click)="remove(booking.id)">
           <ion-icon name="trash" style="zoom:1.5"></ion-icon>

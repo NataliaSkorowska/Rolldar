@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from './../services/crud.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 export class Booking {
   $key: string;
@@ -20,7 +21,8 @@ export class BookingsPage implements OnInit {
   public BookingsBackup: any[];
 
   constructor(private crudService: CrudService,
-    private firestore: AngularFirestore) { }
+    private firestore: AngularFirestore,
+    private router: Router) { }
 
    async ngOnInit() {
     this.crudService.getBookings().subscribe((res) => {
@@ -71,5 +73,8 @@ export class BookingsPage implements OnInit {
       this.crudService.delete(id)
     }
   } 
+  goToBookingPage(id: number) {
+    this.router.navigate(['updatebooking', id]);
+  }
 
 }

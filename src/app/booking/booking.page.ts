@@ -23,7 +23,8 @@ export class BookingPage implements OnInit {
       address: [''],
       mobile:[''],
       email:[''],
-      service:['']
+      service:[''],
+      blindType:['']
     })
   }
   submitBooking() {

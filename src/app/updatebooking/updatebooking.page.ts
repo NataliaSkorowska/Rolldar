@@ -14,26 +14,23 @@ export class UpdatebookingPage implements OnInit {
   id: any;
 
   constructor( private crudService: CrudService,
-    private activatedRoute: ActivatedRoute,
+    private actRoute: ActivatedRoute,
     private router: Router,
     public formBuilder: FormBuilder) {
-      this.id = this.activatedRoute.snapshot.paramMap.get('id');
-      this.crudService.getBooking(this.id).subscribe((data) => {
-      this.editForm = this.formBuilder.group({
-        title: [data['title']],
-        description: [data['description']]
-      })
-    });
-  }
+      this.id = this.actRoute.snapshot.paramMap.get('id');
+      this.crudService.getBooking(this.id).subscribe(res => {
+        this.editForm.setValue(res);
+      });
+    }
 
   ngOnInit() {
     this.editForm = this.formBuilder.group({
-      title: [''],
-      description: ['']
+      name: [''],
+      mobile: ['']
     })    
   }
   
-  onSubmit() {
-    this.crudService.update(this.id, this.editForm.value)
+  updateForm() {
+    this.crudService.update(this.id, this.editForm.value);
   }
 }

@@ -35,7 +35,7 @@ export class CrudService {
         this.router.navigate(['/bookings']);
       }).catch(error => console.log(error));;
   }
-
+  
   delete(id: string) {
     this.ngFirestore.doc('bookings/' + id).delete();
   }
