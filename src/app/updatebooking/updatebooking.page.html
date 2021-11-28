@@ -6,26 +6,34 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<ion-content >
+  <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" >
+    <ion-item>
+      <ion-label color="primary" position="floating">Imię i nazwisko</ion-label>
+      <ion-input placeholder="Enter notes title" autofocus=true formControlName="name"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label color="primary" position="floating">Adres</ion-label>
+      <ion-textarea  formControlName="address"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" position="floating">Numer telefonu</ion-label>
+      <ion-textarea formControlName="mobile"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" position="floating">Status</ion-label>
+      <ion-textarea formControlName="status"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label  color="primary" position="floating">Adres email</ion-label>
+      <ion-textarea  formControlName="email"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label  color="primary" position="floating">Opiekun klienta</ion-label>
+      <ion-textarea  formControlName="employee"></ion-textarea>
+    </ion-item>
 
-<ion-content class="ion-content">
-  <ion-list lines="full">
-    <form [formGroup]="editForm" (ngSubmit)="updateForm()">
-      <ion-item>
-        <ion-label position="floating">Imie</ion-label>
-        <ion-input formControlName="name" type="text" required></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Mobile</ion-label>
-        <ion-input formControlName="mobile" type="text" required>
-        </ion-input>
-      </ion-item>
-
-      <ion-row>
-        <ion-col>
-          <ion-button type="submit" color="primary" shape="full" expand="block">Edytuj</ion-button>
-        </ion-col>
-      </ion-row>
-    </form>
-  </ion-list>
+    <ion-button type="submit" expand="block"> Zatwierdź edycję</ion-button>
+  </form>
 </ion-content>

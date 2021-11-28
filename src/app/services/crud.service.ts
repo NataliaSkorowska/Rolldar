@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { map } from 'rxjs/operators';
+import { Booking } from '../booking.model';
 
-export class Booking {
-  $key: string;
-  title: string;
-  description: string;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -25,12 +22,19 @@ export class CrudService {
     return this.ngFirestore.collection('bookings').snapshotChanges();
   }
   
-  getBooking(id) {
-    return this.ngFirestore.collection('bookings').doc(id).valueChanges();
+  getBooking(id:string) {
+    return this.ngFirestore.collection('bookings').doc<Booking>(id).snapshotChanges()
+    .pipe(
+      map(a => {
+        const id = a.payload.id;
+        const data = a.payload.data();
+        return { id, ...data };
+      })
+    );
   }
 
-  update(id, booking: Booking) {
-    this.ngFirestore.collection('bookings/').doc(id).update(booking)
+  update(id: string, booking: Booking): Promise<void>{
+    return this.ngFirestore.collection('bookings/').doc<Booking>(id).update(booking)
       .then(() => {
         this.router.navigate(['/bookings']);
       }).catch(error => console.log(error));;

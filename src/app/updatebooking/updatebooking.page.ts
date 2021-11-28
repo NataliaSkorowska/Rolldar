@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from './../services/crud.service';
 import { Router, ActivatedRoute } from "@angular/router";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
+import { Booking } from '../booking.model';
 
 @Component({
   selector: 'app-updatebooking',
@@ -9,28 +10,45 @@ import { FormGroup, FormBuilder } from "@angular/forms";
   styleUrls: ['./updatebooking.page.scss'],
 })
 export class UpdatebookingPage implements OnInit {
+  id: string='';
+  bookingForm : FormGroup;
 
-  editForm: FormGroup;
-  id: any;
 
   constructor( private crudService: CrudService,
     private actRoute: ActivatedRoute,
     private router: Router,
     public formBuilder: FormBuilder) {
-      this.id = this.actRoute.snapshot.paramMap.get('id');
-      this.crudService.getBooking(this.id).subscribe(res => {
-        this.editForm.setValue(res);
-      });
+     this.bookingForm = this.formBuilder.group({
+      name: new FormControl(''),
+      mobile: new FormControl(''),
+      address: new FormControl(''),
+      status: new FormControl(''),
+      email: new FormControl(''),
+      employee: new FormControl('')
+    });
     }
 
   ngOnInit() {
-    this.editForm = this.formBuilder.group({
-      name: [''],
-      mobile: ['']
-    })    
+    this.id= this.actRoute.snapshot.paramMap.get("id");
+
+    this.crudService.getBooking(this.actRoute.snapshot.paramMap.get("id"))
+      .subscribe(data => {
+        this.bookingForm = this.formBuilder.group({
+          name: new FormControl(data.name),
+          mobile: new FormControl(data.mobile),
+          address: new FormControl(data.address),
+          email: new FormControl(data.email),
+          status: new FormControl(data.status),
+          employee: new FormControl(data.employee)
+        });
+      });
   }
-  
-  updateForm() {
-    this.crudService.update(this.id, this.editForm.value);
+  onSubmit() {
+    const booking: Booking = Object.assign({}, this.bookingForm.value);
+    this.crudService.update(this.id,booking)
+    .then(()=>{
+      this.router.navigate(['/bookings']);
+    });
   }
+
 }
