@@ -63,10 +63,16 @@ const routes: Routes = [
   {
     path: 'updatebooking',
     loadChildren: () => import('./updatebooking/updatebooking.module').then( m => m.UpdatebookingPageModule)
-  },  {
+  },
+  {
     path: 'bookingdetail',
     loadChildren: () => import('./bookingdetail/bookingdetail.module').then( m => m.BookingdetailPageModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    
+  }
 
 
 ];

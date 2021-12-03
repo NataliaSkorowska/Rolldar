@@ -1,18 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista zamówień</ion-title>
+    <ion-title>Zamówienia</ion-title>
+    <ion-buttons class="buttons" slot="start">
+      <ion-menu-button start autoHide="false"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content>
- <ion-searchbar animated placeholder="Wyszukaj" 
- inputmode="search"
- debounce="500"
- (ionCancel)="onCancel($event)"
- cancelButtonIcon="close-outline"
-      showCancelButton="focus"
-      showClearButton="focus"
-      cancelButtonText="Cancel"
-  (ionInput)="filterList($event)"></ion-searchbar>
+<ion-content> 
+ <ion-searchbar></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let booking of Bookings " lines="full">
       <ion-label>

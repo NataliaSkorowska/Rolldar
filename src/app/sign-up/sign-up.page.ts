@@ -67,7 +67,6 @@ export class SignUpPage {
   signUpWithEmail() {
     this.authService.signUpWithEmail(this.signUpForm.value['email'], this.signUpForm.value['password'])
     .then(user => {
-      // navigate to user profile
       this.redirectLoggedUserToProfilePage();
     })
     .catch(error => {
