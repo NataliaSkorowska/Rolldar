@@ -11,7 +11,6 @@ export const environment = {
     storageBucket: "rolldar.appspot.com",
     messagingSenderId: "946661028969",
     appId: "1:946661028969:web:a54d1dc661a22626759ef8"
-
   }
 };
 

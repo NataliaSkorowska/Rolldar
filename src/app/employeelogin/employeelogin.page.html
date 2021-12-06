@@ -16,5 +16,7 @@
     <ion-label position="stacked">Hasło</ion-label>
     <ion-input type="password" [(ngModel)]="user.pw"></ion-input>
   </ion-item>
-  <ion-button expand="block" (click)="signIn()">Zaloguj</ion-button>
+  <ion-button (click)="signIn()">
+    Zaloguj
+    </ion-button>
 </ion-content>

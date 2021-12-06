@@ -1,7 +1,17 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo, canActivate } from '@angular/fire/auth-guard';
+import { HomePage } from './home/home.page';
+import { ProfilePage } from './profile/profile.page';
+import { FirebaseAuthService } from './firebase-auth.service';
+import { GuardService } from './services/guard.service';
+import { AdminauthService } from './adminauth.service';
 
 const routes: Routes = [
+  { path: 'profile',
+  loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
+  canActivate: [GuardService],
+},
   {
     path: 'sign-in',
     loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule)
@@ -12,24 +22,22 @@ const routes: Routes = [
   },
   {
     path: 'offer',
-    loadChildren: () => import('./offer/offer.module').then( m => m.OfferPageModule)
+    loadChildren: () => import('./offer/offer.module').then( m => m.OfferPageModule),
+    canActivate: [GuardService]
   },
   { path: 'offer-details/:id',
-  loadChildren: () =>
- import('./offer-details/offer-details.module').then((m) => m.OfferDetailsPageModule), 
-},
+    loadChildren: () =>
+    import('./offer-details/offer-details.module').then((m) => m.OfferDetailsPageModule),
+    canActivate: [GuardService]
+  },
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
-    path: 'employeelogin',
-    loadChildren: () => import('./employeelogin/employeelogin.module').then( m => m.EmployeeloginPageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
   },
   {
     path: 'employeelogin',
@@ -37,43 +45,32 @@ const routes: Routes = [
   },
   {
     path: 'bookings',
-    loadChildren: () => import('./bookings/bookings.module').then( m => m.BookingsPageModule)
-  },
-  {
-    path: 'offer',
-    loadChildren: () => import('./offer/offer.module').then( m => m.OfferPageModule)
+    loadChildren: () => import('./bookings/bookings.module').then( m => m.BookingsPageModule),
   },
   {
     path: 'offer-details',
-    loadChildren: () => import('./offer-details/offer-details.module').then( m => m.OfferDetailsPageModule)
-  },
-  {
-    path: 'bookings',
-    loadChildren: () => import('./bookings/bookings.module').then( m => m.BookingsPageModule)
-
+    loadChildren: () => import('./offer-details/offer-details.module').then( m => m.OfferDetailsPageModule),
+    canActivate: [GuardService]   
   },
   {
     path: 'booking',
-    loadChildren: () => import('./booking/booking.module').then( m => m.BookingPageModule)
+    loadChildren: () => import('./booking/booking.module').then( m => m.BookingPageModule),
   },
   {
     path: 'updatebooking/:id',
-    loadChildren: () => import('./updatebooking/updatebooking.module').then( m => m.UpdatebookingPageModule)
+    loadChildren: () => import('./updatebooking/updatebooking.module').then( m => m.UpdatebookingPageModule),
+    canActivate: [GuardService]
   },
   {
     path: 'updatebooking',
-    loadChildren: () => import('./updatebooking/updatebooking.module').then( m => m.UpdatebookingPageModule)
+    loadChildren: () => import('./updatebooking/updatebooking.module').then( m => m.UpdatebookingPageModule),
+    canActivate: [GuardService]
   },
   {
     path: 'bookingdetail',
-    loadChildren: () => import('./bookingdetail/bookingdetail.module').then( m => m.BookingdetailPageModule)
-  },
-  {
-    path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-    
+    loadChildren: () => import('./bookingdetail/bookingdetail.module').then( m => m.BookingdetailPageModule),
+    canActivate: [GuardService]
   }
-
 
 ];
 

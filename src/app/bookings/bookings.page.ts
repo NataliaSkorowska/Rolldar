@@ -3,6 +3,9 @@ import { CrudService } from './../services/crud.service';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase/app';
+import "firebase/auth";
+
 
 export class Booking {
   $key: string;
@@ -19,6 +22,7 @@ export class BookingsPage implements OnInit {
 
   public Bookings: Booking[];
   public BookingsBackup: any[];
+  public isAdmin: boolean;
 
   constructor(private crudService: CrudService,
     private firestore: AngularFirestore,

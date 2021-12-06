@@ -37,6 +37,11 @@ export class AppComponent {
           title: 'Rezerwuj usługę',
           url: '/booking',
           icon: 'book'
+        },
+        {
+          title: 'Wyloguj',
+          url: '/home',
+          icon: 'exit-outline'
         }
     ];  
   }  

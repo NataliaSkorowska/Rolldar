@@ -1,9 +1,14 @@
 import { Component, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FirebaseAuthService } from '../firebase-auth.service';
 import { Subscription } from 'rxjs';
+import * as firebase from 'firebase/app';
+import { Observable } from 'rxjs/internal/Observable';
+import { AngularFireDatabase } from "@angular/fire/database";
+import { AlertController } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,6 +16,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['sign-in.page.scss'],
 })
 export class SignInPage {
+  user = null;
+  ref: any;
+  count: Observable<any>;
   signInForm: FormGroup;
   submitError: string;
   authRedirectResult: Subscription;
@@ -30,7 +38,9 @@ export class SignInPage {
     public angularFire: AngularFireAuth,
     public router: Router,
     private ngZone: NgZone,
-    private authService: FirebaseAuthService
+    private authService: FirebaseAuthService,
+    private db:AngularFireDatabase,
+    private fb: FormBuilder,
   ) {
     this.signInForm = new FormGroup({
       'email': new FormControl('', Validators.compose([
@@ -42,9 +52,18 @@ export class SignInPage {
         Validators.required
       ]))
     });
+   
+    this.angularFire.authState.subscribe((user) => {
+      this.user = user ? user : null;
+      if (this.user !== null) {
+        this.ref = db.object(user.uid);
+        this.count = this.ref.valueChanges();
+        this.count.subscribe((initial) => {
+          if (initial === null) this.ref.set(1);
+        });
+      }
+    });
 
-    // Get firebase authentication redirect result invoken when using signInWithRedirect()
-    // signInWithRedirect() is only used when client is in web but not desktop
     this.authRedirectResult = this.authService.getRedirectResult()
     .subscribe(result => {
       if (result.user) {
@@ -55,20 +74,17 @@ export class SignInPage {
     });
   }
 
-  // Once the auth provider finished the authentication flow, and the auth redirect completes,
-  // redirect the user to the profile page
   redirectLoggedUserToProfilePage() {
-    // As we are calling the Angular router navigation inside a subscribe method, the navigation will be triggered outside Angular zone.
-    // That's why we need to wrap the router navigation call inside an ngZone wrapper
     this.ngZone.run(() => {
       this.router.navigate(['offer']);
     });
   }
-
+  logout() {
+    this.angularFire.signOut();
+  }
   signInWithEmail() {
     this.authService.signInWithEmail(this.signInForm.value['email'], this.signInForm.value['password'])
     .then(user => {
-      // navigate to user profile
       this.redirectLoggedUserToProfilePage();
     })
     .catch(error => {

@@ -24,7 +24,8 @@ export class BookingPage implements OnInit {
       mobile:[''],
       email:[''],
       service:[''],
-      blindType:['']
+      blindType:[''],
+      status:['nowy']
     })
   }
   submitBooking() {

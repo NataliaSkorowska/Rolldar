@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
+import { Inject } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable, Subject, from } from 'rxjs';
 import { Platform } from '@ionic/angular';
 import { User, auth } from 'firebase/app';
 import { ProfileModel } from './profile/profile.model';
-import { filter, map, take } from 'rxjs/operators';
+import { filter, map, take, tap, switchMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { EmployeeloginPageRoutingModule } from './employeelogin/employeelogin-routing.module';
 
 @Injectable()
 export class FirebaseAuthService {
@@ -12,36 +16,40 @@ export class FirebaseAuthService {
   currentUser: User;
   userProviderAdditionalInfo: any;
   redirectResult: Subject<any> = new Subject<any>();
-
+  isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(null);
 
   constructor(
     public angularFireAuth: AngularFireAuth,
-    public platform: Platform
+    public platform: Platform,
+    public router: Router,
   ) {
     this.angularFireAuth.onAuthStateChanged((user) => {
       if (user) {
         this.currentUser = user;
+        this.isAuthenticated.next(true);
       } else {
         this.currentUser = null;
+        this.isAuthenticated.next(false);
       }
     });
-
     this.angularFireAuth.getRedirectResult()
     .then((result) => {
       if (result.user) {
         this.setProviderAdditionalInfo(result.additionalUserInfo.profile);
         this.currentUser = result.user;
         this.redirectResult.next(result);
+        this.isAuthenticated.next(true);
       }
     }, (error) => {
       this.redirectResult.next({error: error.code});
+      this.isAuthenticated.next(false);
     });
   }
-
+  
   getRedirectResult(): Observable<any> {
     return this.redirectResult.asObservable();
   }
-
+  
   setProviderAdditionalInfo(additionalInfo: any) {
     this.userProviderAdditionalInfo = {...additionalInfo};
   }
@@ -65,7 +73,6 @@ export class FirebaseAuthService {
       providerData = {...providerData, ...this.userProviderAdditionalInfo};
     }
 
-    // Default imgs are too small and our app needs a bigger image
     switch (providerData.providerId) {
       case 'facebook.com':
         userModel.image = providerData.photoURL + '?height=400';
@@ -87,7 +94,6 @@ export class FirebaseAuthService {
     userModel.description = providerData.description || 'Anything else you would like to share with the world?';
     userModel.phoneNumber = providerData.phoneNumber || 'Is there a number where I can reach you?';
     userModel.email = providerData.email || 'Where can I send you emails?';
-    userModel.provider = (providerData.providerId !== 'password') ? providerData.providerId : 'Credentials';
 
     return userModel;
   }
@@ -107,7 +113,6 @@ export class FirebaseAuthService {
   socialSignIn(providerName: string, scopes?: Array<string>): Promise<any> {
     const provider = new auth.OAuthProvider(providerName);
 
-    // add any permission scope you need
     if (scopes) {
       scopes.forEach(scope => {
         provider.addScope(scope);
@@ -117,14 +122,12 @@ export class FirebaseAuthService {
     if (this.platform.is('desktop')) {
       return this.angularFireAuth.signInWithPopup(provider);
     } else {
-      // web but not desktop, for example mobile PWA
       return this.angularFireAuth.signInWithRedirect(provider);
     }
   }
 
   signInWithFacebook() {
     const provider = new auth.FacebookAuthProvider();
-    // const scopes = ['user_birthday'];
     return this.socialSignIn(provider.providerId);
   }
 

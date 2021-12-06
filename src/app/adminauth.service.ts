@@ -7,17 +7,20 @@ import {
   of
 } from 'rxjs';
 import {
+  CanActivate,
   Router
 } from '@angular/router';
 import {
   filter
 } from 'rxjs/operators';
-const TOKEN_KEY = 'user-access-token';
+import { RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminauthService {
+  public isAuthenticated: boolean;
 
   user: Observable < any > ;
   private authState = new BehaviorSubject(null);
@@ -27,15 +30,12 @@ export class AdminauthService {
     this.user = this.authState
       .asObservable()
       .pipe(filter(response => response));
-  }
-
-
-
-  
+  }  
   signIn(credentials) {
     let email = credentials.email;
     let pw = credentials.pw;
     let user = null;
+    
 
     if (email === 'admin' && pw === 'admin') {
       user = {
@@ -49,7 +49,6 @@ export class AdminauthService {
       };
     }
     this.authState.next(user);
-
     return of(user);
   }
 
