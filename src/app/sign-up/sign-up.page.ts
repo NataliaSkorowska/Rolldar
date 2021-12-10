@@ -23,6 +23,10 @@ export class SignUpPage {
     'password': [
       { type: 'required', message: 'Hasło jest wymagane' },
       { type: 'minlength', message: 'Hasło musi zawierać minimum 6 znaków' }
+    ],
+    'name': [
+      { type: 'required', message: 'Imię i nazwisko jest wymagane' },
+      { type: 'minlength', message: 'Imię i nazwisko musi zawierać minimum 6 znaków' }
     ]
   };
 
@@ -40,10 +44,12 @@ export class SignUpPage {
       'password': new FormControl('', Validators.compose([
         Validators.minLength(6),
         Validators.required
+      ])),
+      'name': new FormControl('', Validators.compose([
+        Validators.minLength(6),
+        Validators.required
       ]))
     });
-    // Get firebase authentication redirect result invoken when using signInWithRedirect()
-    // signInWithRedirect() is only used when client is in web but not desktop
     this.authRedirectResult = this.authService.getRedirectResult()
     .subscribe(result => {
       if (result.user) {
@@ -53,12 +59,7 @@ export class SignUpPage {
       }
     });
   }
-
-  // Once the auth provider finished the authentication flow, and the auth redirect completes,
-  // redirect the user to the profile page
   redirectLoggedUserToProfilePage() {
-    // As we are calling the Angular router navigation inside a subscribe method, the navigation will be triggered outside Angular zone.
-    // That's why we need to wrap the router navigation call inside an ngZone wrapper
     this.ngZone.run(() => {
       this.router.navigate(['profile']);
     });
@@ -70,7 +71,7 @@ export class SignUpPage {
       this.redirectLoggedUserToProfilePage();
     })
     .catch(error => {
-      this.submitError = error.message;
+      this.submitError = "Ten adres email jest już przypisany do konta";
     });
   }
 
@@ -80,12 +81,8 @@ export class SignUpPage {
       if (result.additionalUserInfo) {
         this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
       }
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      // const token = result.credential.accessToken;
-      // The signed-in user info is in result.user;
       this.redirectLoggedUserToProfilePage();
     }).catch((error) => {
-      // Handle Errors here.
       console.log(error);
     });
   }
@@ -96,12 +93,8 @@ export class SignUpPage {
       if (result.additionalUserInfo) {
         this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
       }
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      // const token = result.credential.accessToken;
-      // The signed-in user info is in result.user;
       this.redirectLoggedUserToProfilePage();
     }).catch((error) => {
-      // Handle Errors here.
       console.log(error);
     });
   }
@@ -112,12 +105,8 @@ export class SignUpPage {
       if (result.additionalUserInfo) {
         this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
       }
-      // This gives you a Twitter Access Token. You can use it to access the Twitter API.
-      // const token = result.credential.accessToken;
-      // The signed-in user info is in result.user;
       this.redirectLoggedUserToProfilePage();
     }).catch((error) => {
-      // Handle Errors here.
       console.log(error);
     });
   }

@@ -28,6 +28,10 @@
       <ion-label  color="primary" position="floating">Status zamówienia</ion-label>
       <ion-input  formControlName="status"></ion-input>
     </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Data</ion-label>
+      <ion-datetime (ionChange)="getDate($event)" formControlName="bookingDate" [value]="defaultDate"></ion-datetime>
+    </ion-item>
     <ion-button type="submit" expand="block"> Zatwierdź edycję</ion-button>
   </form>
 </ion-content>

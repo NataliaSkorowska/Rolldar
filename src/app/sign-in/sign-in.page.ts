@@ -69,7 +69,7 @@ export class SignInPage {
       if (result.user) {
         this.redirectLoggedUserToProfilePage();
       } else if (result.error) {
-        this.submitError = result.error;
+        this.submitError = "result.error;"
       }
     });
   }
@@ -88,7 +88,7 @@ export class SignInPage {
       this.redirectLoggedUserToProfilePage();
     })
     .catch(error => {
-      this.submitError = error.message;
+      this.submitError = "Podano nieprawidłowe dane. Spróbuj ponownie."
     });
   }
 
@@ -98,12 +98,8 @@ export class SignInPage {
       if (result.additionalUserInfo) {
         this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
       }
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-      // const token = result.credential.accessToken;
-      // The signed-in user info is in result.user;
       this.redirectLoggedUserToProfilePage();
     }).catch((error) => {
-      // Handle Errors here.
       console.log(error);
     });
   }
@@ -114,12 +110,8 @@ export class SignInPage {
       if (result.additionalUserInfo) {
         this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
       }
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      // const token = result.credential.accessToken;
-      // The signed-in user info is in result.user;
       this.redirectLoggedUserToProfilePage();
     }).catch((error) => {
-      // Handle Errors here.
       console.log(error);
     });
   }
@@ -130,12 +122,8 @@ export class SignInPage {
       if (result.additionalUserInfo) {
         this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
       }
-      // This gives you a Twitter Access Token. You can use it to access the Twitter API.
-      // const token = result.credential.accessToken;
-      // The signed-in user info is in result.user;
       this.redirectLoggedUserToProfilePage();
     }).catch((error) => {
-      // Handle Errors here.
       console.log(error);
     });
   }

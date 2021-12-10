@@ -16,7 +16,7 @@
       <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let blind of blinds | filter:term">
         <ion-card 
            class="img-box"
-           [style.background-image]="'url('+ blind.url +')'"
+           [style.background-image]="'url('+ blind.url1 +')'"
            (click) = "goToDetailPage(blind.id)" [item]="blind" >
         </ion-card>
       </ion-col>

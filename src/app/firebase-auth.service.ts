@@ -61,7 +61,7 @@ export class FirebaseAuthService {
       map((user: User) => {
         return this.getProfileData();
       }),
-      take(1) // this.angularFireAuth.user never completes so we use take(1) in order to complete after the first value is emitted
+      take(1) 
     );
   }
 
@@ -75,22 +75,10 @@ export class FirebaseAuthService {
 
     switch (providerData.providerId) {
       case 'facebook.com':
-        userModel.image = providerData.photoURL + '?height=400';
-        break;
-      case 'password':
-        userModel.image = 'https://s3-us-west-2.amazonaws.com/ionicthemes/otros/avatar-placeholder.png';
-        break;
-      case 'twitter.com':
-        userModel.image = providerData.photoURL.replace('_normal', '_400x400');
-        break;
       case 'google.com':
-        userModel.image = providerData.photoURL.split('=')[0];
-        break;
       default:
-        userModel.image = providerData.photoURL;
     }
     userModel.name = providerData.name || providerData.displayName || 'What\'s your name?';
-    userModel.role = 'How would you describe yourself?';
     userModel.description = providerData.description || 'Anything else you would like to share with the world?';
     userModel.phoneNumber = providerData.phoneNumber || 'Is there a number where I can reach you?';
     userModel.email = providerData.email || 'Where can I send you emails?';

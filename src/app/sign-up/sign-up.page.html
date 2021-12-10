@@ -37,8 +37,17 @@
       </div>
 
       <ion-item class="input-item">
-        <ion-input type="text" placeholder="Imię i nazwisko"  clearInput autocapitalize="off" ></ion-input>
+        <ion-input type="text" placeholder="Imię i nazwisko" formControlName="name" clearInput autocapitalize="off" ></ion-input>
       </ion-item>
+      <div class="error-container">
+        <ng-container *ngFor="let validation of validation_messages.name">
+          <div class="error-message" *ngIf="signUpForm.get('name').hasError(validation.type) && (signUpForm.get('name').dirty || signUpForm.get('name').touched)">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <span>{{ validation.message }}</span>
+          </div>
+        </ng-container>
+      </div>
+      
 
     </ion-list>
 

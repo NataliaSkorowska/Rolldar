@@ -23,7 +23,8 @@ export class UpdatebookingPage implements OnInit {
       mobile: new FormControl(''),
       address: new FormControl(''),
       email: new FormControl(''),
-      status: new FormControl('')
+      status: new FormControl(''),
+      bookingDate: new FormControl('')
     });
     }
 
@@ -37,7 +38,8 @@ export class UpdatebookingPage implements OnInit {
           mobile: new FormControl(data.mobile),
           address: new FormControl(data.address),
           email: new FormControl(data.email),
-          status: new FormControl (data.status)
+          status: new FormControl (data.status),
+          bookingDate: new FormControl(data.bookingDate)
         });
       });
   }

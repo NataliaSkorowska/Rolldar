@@ -5,4 +5,5 @@ export class Booking {
     email: string;
     address: string;
     status:string;
+    bookingDate: Date;
   }
