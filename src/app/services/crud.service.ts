@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
 import { map } from 'rxjs/operators';
 import { Booking } from '../booking.model';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 
 @Injectable({
@@ -12,7 +13,8 @@ export class CrudService {
 
   constructor(
     private ngFirestore: AngularFirestore,
-    private router: Router
+    private router: Router,
+    public angularFireDatabase: AngularFireDatabase
   ) { }
   create(booking: Booking) {
     return this.ngFirestore.collection('bookings').add(booking);
@@ -43,4 +45,5 @@ export class CrudService {
   delete(id: string) {
     this.ngFirestore.doc('bookings/' + id).delete();
   }
+
 }

@@ -70,7 +70,15 @@ const routes: Routes = [
     path: 'bookingdetail',
     loadChildren: () => import('./bookingdetail/bookingdetail.module').then( m => m.BookingdetailPageModule),
     canActivate: [GuardService]
+  },  {
+    path: 'invoices',
+    loadChildren: () => import('./invoices/invoices.module').then( m => m.InvoicesPageModule)
+  },
+  {
+    path: 'admin-main-page',
+    loadChildren: () => import('./admin-main-page/admin-main-page.module').then( m => m.AdminMainPagePageModule)
   }
+
 
 ];
 

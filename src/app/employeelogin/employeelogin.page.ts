@@ -23,7 +23,7 @@ export class EmployeeloginPage implements OnInit {
     this.auth.signIn(this.user).subscribe(user => {
       let role = user['role'];
       if (role === 'ADMIN') {
-        this.router.navigateByUrl('/bookings');
+        this.router.navigateByUrl('/admin-main-page');
       }
     });
   }

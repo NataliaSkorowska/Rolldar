@@ -12,6 +12,8 @@ import { environment } from '../environments/environment';
 import { FirebaseAuthService } from './firebase-auth.service';
 import {AngularFireDatabaseModule} from '@angular/fire/database'
 import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
+import { Camera } from '@ionic-native/camera/ngx';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,14 +24,16 @@ import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,
     SplashScreen,
     FirebaseAuthService,
     AngularFireAuthGuardModule,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Camera
   ],
   bootstrap: [AppComponent]
 })

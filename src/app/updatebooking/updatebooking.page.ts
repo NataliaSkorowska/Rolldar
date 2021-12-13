@@ -1,32 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CrudService } from './../services/crud.service';
 import { Router, ActivatedRoute } from "@angular/router";
 import { FormGroup, FormBuilder, FormControl } from "@angular/forms";
 import { Booking } from '../booking.model';
+import { AngularFireStorage } from '@angular/fire/storage';
+
 
 @Component({
   selector: 'app-updatebooking',
   templateUrl: './updatebooking.page.html',
   styleUrls: ['./updatebooking.page.scss'],
 })
+
 export class UpdatebookingPage implements OnInit {
+
   id: string='';
   bookingForm : FormGroup;
-
+  image: string;
 
   constructor( private crudService: CrudService,
     private actRoute: ActivatedRoute,
     private router: Router,
-    public formBuilder: FormBuilder) {
+    public formBuilder: FormBuilder,
+    private afs: AngularFireStorage,
+    private rout: Router,
+    private route: ActivatedRoute,
+    ) {
      this.bookingForm = this.formBuilder.group({
       name: new FormControl(''),
       mobile: new FormControl(''),
       address: new FormControl(''),
       email: new FormControl(''),
       status: new FormControl(''),
-      bookingDate: new FormControl('')
+      bookingDate: new FormControl(''),
+      image: new FormControl('')
     });
     }
+
 
   ngOnInit() {
     this.id= this.actRoute.snapshot.paramMap.get("id");
@@ -39,7 +49,8 @@ export class UpdatebookingPage implements OnInit {
           address: new FormControl(data.address),
           email: new FormControl(data.email),
           status: new FormControl (data.status),
-          bookingDate: new FormControl(data.bookingDate)
+          bookingDate: new FormControl(data.bookingDate),
+          image: new FormControl(data.image)
         });
       });
   }
@@ -50,5 +61,4 @@ export class UpdatebookingPage implements OnInit {
       this.router.navigate(['/bookings']);
     });
   }
-
 }

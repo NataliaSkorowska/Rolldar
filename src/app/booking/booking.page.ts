@@ -31,6 +31,7 @@ export class BookingPage implements OnInit {
       blindType:['',[Validators.required]],
       status:['nowy'],
       bookingDate: [this.defaultDate],
+      image: ['']
     })
   }
 
