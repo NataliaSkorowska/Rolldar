@@ -7,6 +7,7 @@ import { CrudService } from '../services/crud.service';
 import { AlertController } from '@ionic/angular';
 import { storage } from 'firebase';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { stringify } from 'querystring';
 
 
 export interface MyData {
@@ -76,13 +77,10 @@ export class InvoicesPage implements OnInit {
      console.error('unsupported file type :( ')
      return;
     }
-
     this.isUploading = true;
     this.isUploaded = false;
 
-
     this.fileName = file.name;
-
     // The storage path
     const path = `invoices/${new Date().getTime()}_${file.name}`;
 
@@ -124,7 +122,6 @@ export class InvoicesPage implements OnInit {
   addImagetoDB(image: MyData) {
     //Create an ID for document
     const id = this.database.createId();
-
     //Set document id with value in database
     this.imageCollection.doc(id).set(image).then(resp => {
       console.log(resp);
@@ -132,5 +129,8 @@ export class InvoicesPage implements OnInit {
       console.log("error " + error);
     });
   }
-}
 
+ //delete(filepath) {
+   // return this.storage.storage.refFromURL(filepath).delete();
+  //}
+}

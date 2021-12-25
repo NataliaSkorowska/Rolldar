@@ -35,8 +35,8 @@
         Rozmiar pliku: {{ snap.totalBytes | fileSizePipe }} Przesłano:
         {{ snap.bytesTransferred | fileSizePipe }}
         <div *ngIf="snapshot && snap.bytesTransferred != snap.totalBytes">
-          <ion-button color="warning" size="small" (click)="task.pause()" class="button is-warning">Zatrzymaj</ion-button>
-          <ion-button size="small" (click)="task.resume()" class="button is-info">Resume</ion-button>
+          <ion-button color="warning" size="small" (click)="task.pause()" class="button is-warning">Wstrzymaj</ion-button>
+          <ion-button size="small" (click)="task.resume()" class="button is-info">Wznów</ion-button>
           <ion-button color="danger" size="small" (click)="task.cancel()" class="button is-danger">Anuluj</ion-button>
         </div>
       </div>
@@ -65,13 +65,13 @@
 
   <ion-card class="ion-text-center" *ngFor="let item of images | async">
     <ion-card-header>
-      <ion-card-title >
+      <ion-card-title class="cardTitle" >
         {{ item.name }}
       </ion-card-title>
     </ion-card-header>
 
-    <ion-card-content>
-      <img [src]="item.filepath" />
+    <ion-card-content >
+      <img [src]="item.filepath"/>
       <a [href]="item.filepath" target="_blank" rel="noopener">
         <ion-icon name="download-outline"></ion-icon></a>
     </ion-card-content>

@@ -10,30 +10,68 @@
   <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" >
     <ion-item>
       <ion-label color="primary" position="floating">Imię i nazwisko</ion-label>
-      <ion-input placeholder="Enter notes title" autofocus=true formControlName="name"></ion-input>
+      <ion-input autofocus=true formControlName="name"></ion-input>
     </ion-item>
+    <div class="error-container">
+      <ng-container *ngFor="let validation of validation_messages.name">
+        <div class="error-message" *ngIf="bookingForm.get('name').hasError(validation.type) && (bookingForm.get('name').dirty || bookingForm.get('name').touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
     <ion-item>
       <ion-label color="primary" position="floating">Adres</ion-label>
       <ion-input  formControlName="address"></ion-input>
     </ion-item>
+    <div class="error-container">
+      <ng-container *ngFor="let validation of validation_messages.address">
+        <div class="error-message" *ngIf="bookingForm.get('address').hasError(validation.type) && (bookingForm.get('address').dirty || bookingForm.get('address').touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
     <ion-item>
       <ion-label color="primary" position="floating">Numer telefonu</ion-label>
       <ion-input formControlName="mobile"></ion-input>
     </ion-item>
+    <div class="error-container">
+      <ng-container *ngFor="let validation of validation_messages.mobile">
+        <div class="error-message" *ngIf="bookingForm.get('mobile').hasError(validation.type) && (bookingForm.get('mobile').dirty || bookingForm.get('mobile').touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
     <ion-item>
       <ion-label  color="primary" position="floating">Adres email</ion-label>
       <ion-input  formControlName="email"></ion-input>
     </ion-item>
+    <div class="error-container">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="bookingForm.get('email').hasError(validation.type) && (bookingForm.get('email').dirty || bookingForm.get('email').touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
     <ion-item>
       <ion-label  color="primary" position="floating">Status zamówienia</ion-label>
       <ion-input  formControlName="status"></ion-input>
     </ion-item>
+    <div class="error-container">
+      <ng-container *ngFor="let validation of validation_messages.status">
+        <div class="error-message" *ngIf="bookingForm.get('status').hasError(validation.type) && (bookingForm.get('status').dirty || bookingForm.get('status').touched)">
+          <ion-icon name="information-circle-outline"></ion-icon>
+          <span>{{ validation.message }}</span>
+        </div>
+      </ng-container>
+    </div>
     <ion-item lines="full">
       <ion-label position="floating">Data</ion-label>
       <ion-datetime (ionChange)="getDate($event)" formControlName="bookingDate" [value]="defaultDate"></ion-datetime>
     </ion-item>
-
     <ion-button type="submit" expand="block"> Zatwierdź edycję</ion-button>
   </form>
- 
 </ion-content>
