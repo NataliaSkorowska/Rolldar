@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Zamówienia</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/admin-main-page/"></ion-back-button>
+      <ion-back-button text="" defaultHref="/admin-main-page/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,7 +12,7 @@
     <ion-item *ngFor="let booking of Bookings " lines="full">
       <ion-label>
         <strong>{{booking.name}}</strong>
-        <p>{{booking.address}}</p>
+        <p>{{booking.status}}</p>
       </ion-label>
       <div item-end>
           <ion-icon name="create-outline" (click)="goToBookingPage(booking.id)" style="zoom:1.5"></ion-icon>

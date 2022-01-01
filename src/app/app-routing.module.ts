@@ -67,10 +67,6 @@ const routes: Routes = [
     canActivate: [GuardService]
   },
   {
-    path: 'bookingdetail',
-    loadChildren: () => import('./bookingdetail/bookingdetail.module').then( m => m.BookingdetailPageModule),
-    canActivate: [GuardService]
-  },  {
     path: 'invoices',
     loadChildren: () => import('./invoices/invoices.module').then( m => m.InvoicesPageModule)
   },

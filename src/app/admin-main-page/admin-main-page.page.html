@@ -2,13 +2,12 @@
   <ion-toolbar>
     <ion-title>Panel pracownika</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/admin-main-page/"></ion-back-button>
+      <ion-back-button text="" defaultHref="/admin-main-page/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content class="ion-padding">
-  <div>
+  <div id="container">
   <ion-grid class="ion-align-items-center">
     <ion-row>
       <ion-col>
@@ -18,7 +17,7 @@
     <ion-row>
       <ion-col>
         <ion-button class="button-add" routerLink="/bookings">
-          <ion-icon name="person-outline"></ion-icon>&nbsp;
+          <ion-icon name="list-outline"></ion-icon>&nbsp;
          Zamówienia
         </ion-button>
       </ion-col>
@@ -26,7 +25,7 @@
     <ion-row>
       <ion-col>
         <ion-button class="button-show" routerLink="/invoices">
-          <ion-icon name="people-circle-outline"></ion-icon>&nbsp;
+          <ion-icon name="albums-outline"></ion-icon>&nbsp;
           Faktury
         </ion-button>
       </ion-col>

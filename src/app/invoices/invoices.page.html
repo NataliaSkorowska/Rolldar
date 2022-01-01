@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Faktury</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="./admin-main-page/"></ion-back-button>
+      <ion-back-button text="" defaultHref="/admin-main-page/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -10,8 +10,7 @@
   <ion-card class="ion-text-center" *ngIf="!isUploading && !isUploaded">
     <ion-card-header>
       <ion-card-title class="cardTitle"
-        >Wybierz pliki, które chcesz dodać</ion-card-title
-      >
+        >Wybierz pliki, które chcesz dodać</ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <ion-button color="primary" shape="round" size="small">
@@ -27,7 +26,7 @@
   </ion-card>
   <ion-card class="ion-text-center" *ngIf="isUploading && !isUploaded">
     <ion-card-header>
-      <ion-card-title>Wybrany plik:<b>{{ fileName }}</b></ion-card-title>
+      <ion-card-title>Wybrany plik: <b>{{ fileName }}</b></ion-card-title>
     </ion-card-header>
     <ion-card-content>
       <div *ngIf="percentage | async as pct">
