@@ -8,6 +8,8 @@ import { ProfileModel } from './profile/profile.model';
 import { filter, map, take, tap, switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import * as firebase from 'firebase/app'
+import 'firebase/auth'
 import { EmployeeloginPageRoutingModule } from './employeelogin/employeelogin-routing.module';
 
 @Injectable()
@@ -128,6 +130,10 @@ export class FirebaseAuthService {
   signInWithTwitter() {
     const provider = new auth.TwitterAuthProvider();
     return this.socialSignIn(provider.providerId);
+  }
+
+  resetPassword(email: string): Promise<void>{
+    return firebase.auth().sendPasswordResetEmail(email);
   }
 
 }

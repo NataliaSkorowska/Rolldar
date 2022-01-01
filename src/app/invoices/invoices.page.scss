@@ -32,6 +32,9 @@
     height: 100%;
     opacity: 0;
   }
-  .cardTitle{
-    font:400
+.ios {
+    .cardTitle{
+      font-size: 22px;
+      font-weight:400;
+    } 
   }

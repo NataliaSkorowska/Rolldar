@@ -1,14 +1,14 @@
 {
   "targets": {
-    "ionic5-firebase-authentication": {
+    "rolldar": {
       "hosting": {
         "app": [
-          "ionic5-firebase-authentication"
+          "rolldar"
         ]
       }
     }
   },
   "projects": {
-    "demo": "ionic5-firebase-authentication"
+    "demo": "rolldar"
   }
 }

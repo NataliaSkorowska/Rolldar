@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "ionic5-firebase-authentication",
+  "appId": "io.ionic.rolldar",
+  "appName": "Rolldar",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

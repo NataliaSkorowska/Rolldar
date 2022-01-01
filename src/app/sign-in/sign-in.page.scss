@@ -42,11 +42,15 @@
 
   .sign-in-btn {
     margin: 16px 0px;
+    align-items: center;
   }
 
   .sign-up-btn-wrapper {
     justify-content: flex-end;
     align-items: center;
+    display: flex;
+    text-align: center;
+ 
 
     .sign-up-btn {
       --padding-end: 0px;

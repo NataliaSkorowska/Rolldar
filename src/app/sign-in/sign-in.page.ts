@@ -92,39 +92,5 @@ export class SignInPage {
     });
   }
 
-  facebookSignIn() {
-    this.authService.signInWithFacebook()
-    .then((result: any) => {
-      if (result.additionalUserInfo) {
-        this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
-      }
-      this.redirectLoggedUserToProfilePage();
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
-
-  googleSignIn() {
-    this.authService.signInWithGoogle()
-    .then((result: any) => {
-      if (result.additionalUserInfo) {
-        this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
-      }
-      this.redirectLoggedUserToProfilePage();
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
-
-  twitterSignIn() {
-    this.authService.signInWithTwitter()
-    .then((result: any) => {
-      if (result.additionalUserInfo) {
-        this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
-      }
-      this.redirectLoggedUserToProfilePage();
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
+  
 }

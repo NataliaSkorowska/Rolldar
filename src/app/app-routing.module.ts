@@ -77,6 +77,10 @@ const routes: Routes = [
   {
     path: 'admin-main-page',
     loadChildren: () => import('./admin-main-page/admin-main-page.module').then( m => m.AdminMainPagePageModule)
+  },
+  {
+    path: 'resetpass',
+    loadChildren: () => import('./resetpass/resetpass.module').then( m => m.ResetpassPageModule)
   }
 
 

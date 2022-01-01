@@ -5,6 +5,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FirebaseAuthService } from '../firebase-auth.service';
 import { Subscription } from 'rxjs';
 
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.page.html',
@@ -34,7 +35,7 @@ export class SignUpPage {
     public angularFire: AngularFireAuth,
     public router: Router,
     private ngZone: NgZone,
-    private authService: FirebaseAuthService
+    private authService: FirebaseAuthService,
   ) {
     this.signUpForm = new FormGroup({
       'email': new FormControl('', Validators.compose([
@@ -75,39 +76,5 @@ export class SignUpPage {
     });
   }
 
-  facebookSignUp() {
-    this.authService.signInWithFacebook()
-    .then((result: any) => {
-      if (result.additionalUserInfo) {
-        this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
-      }
-      this.redirectLoggedUserToProfilePage();
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
-
-  googleSignUp() {
-    this.authService.signInWithGoogle()
-    .then((result: any) => {
-      if (result.additionalUserInfo) {
-        this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
-      }
-      this.redirectLoggedUserToProfilePage();
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
-
-  twitterSignUp() {
-    this.authService.signInWithTwitter()
-    .then((result: any) => {
-      if (result.additionalUserInfo) {
-        this.authService.setProviderAdditionalInfo(result.additionalUserInfo.profile);
-      }
-      this.redirectLoggedUserToProfilePage();
-    }).catch((error) => {
-      console.log(error);
-    });
-  }
+  
 }

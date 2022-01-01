@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Zmiana hasła</ion-title>
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/sign-in/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+     <ion-col>
+        <h2 class="auth-title">
+          <img src="./assets/imgs/LogoCircle2.png">
+        </h2>
+  <form #form="ngForm" (ngSubmit)="resetPassword(form)">
+    <div>
+      <ion-item>
+        <ion-input name="email" type="email" placeholder="Email" ngModel required>
+        </ion-input>
+      </ion-item>
+    </div>
+    <div style="text-align: center; margin: auto;">
+      <ion-button style="sign-in-btn" type="submit" [disabled]="form.invalid">Zmień hasło</ion-button>
+    </div>
+  </form>
+     </ion-col> 
+    </ion-row>
+  </ion-grid>
+</ion-content>
