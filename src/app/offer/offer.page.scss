@@ -1,40 +1,50 @@
 .row {
-    padding: 0 12px;
-  }
-  .col {
-    padding: 5px 0;
-  }
-  .card {
-    margin: 0 5px;
-    width: calc(100% - 10px);
-    padding: 5px;
-    height: 40% !important;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
-    border-radius: 4px;
-  
-    h1 {
-        font-weight: 400;
-        font-size: 3.5rem;
-    }
-    p {
-        font-weight: 100;
-        font-size: 1.5rem;
-    }
-  }
-    .grid-full ion-col {
-      flex: 0 0 50%;
-      max-width: 50%;
-      padding: 5px 0;
-  }
-  
-  .img-box {
-    width: 90%;
-    min-height: 180px;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+  padding: 0 12px;
+}
+.col {
+  padding: 5px 0;
+}
+.card {
+  margin: 0 5px;
+  width: calc(100% - 10px);
+  padding: 5px;
+  height: 40% !important;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+  border-radius: 4px;
 
-  .buttons{
-    color:  white !important;
+  h1 {
+      font-weight: 400;
+      font-size: 3.5rem;
+  }
+  p {
+      font-weight: 100;
+      font-size: 1.5rem;
+  }
+}
+  .grid-full ion-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 5px 0;
+}
+
+.img-box {
+  width: 90%;
+  height: 180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.buttons{
+  color:  white !important;
+}
+  .blindTitle{
+    color: #c60000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: medium;
+    text-align: center;
+    margin-top: 50%;
+    font-size: 15px;
+    font-weight: bold;
+    
   }
 

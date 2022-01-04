@@ -62,7 +62,7 @@ export class SignUpPage {
   }
   redirectLoggedUserToProfilePage() {
     this.ngZone.run(() => {
-      this.router.navigate(['profile']);
+      this.router.navigate(['offer']);
     });
   }
 

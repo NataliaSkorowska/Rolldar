@@ -9,10 +9,13 @@ export class BlindService {
     return[
       {
         id:1,
-        url1: "assets/imgs/alumin1.jpg",
+        urlOkladka: "assets/imgs/okladka.jpg",
+        url1: "assets/imgs/alum4.jpg",
         url2:"assets/imgs/alumin2.jpg",
         url3: "assets/imgs/alum3.jpg",
-        url4:"assets/imgs/alum4.jpg",
+        url4:"assets/imgs/alumin1.jpg",
+        url5: "assets/imgs/alumin5.jpg",
+        url6: "assets/imgs/alum6.jpg",
         name: "Aluminiowe",
         info: "Sprawdzą się idealnie nie tylko w sypialni czy salonie," +
          "ale także w kuchni czy łazience, gdyż aluminium charakteryzuje się" +
@@ -23,10 +26,13 @@ export class BlindService {
       },
       {
         id:2,
+        urlOkladka: "assets/imgs/okladka.jpg",
         url1: "assets/imgs/zaslony1.jpg",
         url2:"assets/imgs/zaslony2.jpg",
         url3: "assets/imgs/zaslony3.jpg",
         url4:"assets/imgs/zaslony4.jpg",
+        url5: "assets/imgs/zaslony5.jpg",
+        url6: "assets/imgs/zaslony6.jpg",
         name: "Zasłony",
         info: "Ten typ dekoracji stanowi efektowną ozdobę nie tylko mieszkań" +
         "ale także biur czy instytucji. Poprzez zamontowanie odpowiednich zasłon" +
@@ -36,10 +42,13 @@ export class BlindService {
       },
       {
         id:3,
-        url1: "assets/imgs/rzymska1.jpg",
+        urlOkladka: "assets/imgs/okladka.jpg",
+        url1: "assets/imgs/rzymska3.jpg",
         url2:"assets/imgs/rzymska2.jpg",
-        url3: "assets/imgs/rzymska3.jpg",
+        url3: "assets/imgs/rzymska1.jpg",
         url4:"assets/imgs/rzymska4.jpg",
+        url5: "assets/imgs/rzymska5.jpg",
+        url6: "assets/imgs/rzymska6.jpg",
         name: "Rzymskie",
         info: "Znakiem charakterystycznym rolet rzymskich jest" +
         "sposób ich składania – tkanina nie jest tu zwijana, jak w przypadku" +
@@ -51,10 +60,13 @@ export class BlindService {
       },
       {
         id:4,
+        urlOkladka: "assets/imgs/okladka.jpg",
         url1: "assets/imgs/plisy1.jpg",
         url2:"assets/imgs/plisy2.jpg",
         url3: "assets/imgs/plisy3.jpg",
         url4:"assets/imgs/plisy4.jpg",
+        url5: "assets/imgs/plisy5.jpg",
+        url6: "assets/imgs/plisy6.jpg",
         name: "Plisy",
         info: "Plisy to idealne rozwiązanie dla wszystkich, którym zależy" +
         "na precyzyjnej regulacji ilości wpadającego do pomieszczenia świata.",
@@ -63,10 +75,13 @@ export class BlindService {
       },
       {
         id:5,
+        urlOkladka: "assets/imgs/okladka.jpg",
         url1: "assets/imgs/dziennoc1.jpg",
         url2:"assets/imgs/dziennoc2.jpg",
         url3: "assets/imgs/dziennoc3.jpg",
         url4:"assets/imgs/dziennoc4.jpg",
+        url5: "assets/imgs/dziennoc5.jpg",
+        url6: "assets/imgs/dziennoc6.jpg",
         name: "Dzień i noc",
         info: "Mechanizm rolet dzień noc opiera się na dwóch" +
          "warstwach naprzemiennych pasów z przeźroczystej siatki" +
@@ -78,10 +93,13 @@ export class BlindService {
       },
       {
         id: 6,
+        urlOkladka: "assets/imgs/okladka.jpg",
         url1: "assets/imgs/markiza1.jpg",
         url2:"assets/imgs/markiza2.jpg",
         url3: "assets/imgs/markiza3.jpg",
         url4:"assets/imgs/markiza4.jpg",
+        url5: "assets/imgs/markiza5.jpg",
+        url6: "assets/imgs/markiza6.jpg",
         name: "Markizy",
         info: "Podstawowym zadaniem markizy jest ochrona przeciwsłoneczna" +
          "np. tarasu, balkonu, ogródka restauracyjnego czy zewnętrznego stoiska.",
@@ -90,10 +108,13 @@ export class BlindService {
       },
       {
         id:7,
+        urlOkladka: "assets/imgs/okladka.jpg",
         url1: "assets/imgs/zewnetrzne1.jpg",
         url2:"assets/imgs/zewnetrzne2.jpg",
         url3: "assets/imgs/zewnetrzne3.jpg",
         url4:"assets/imgs/zewnetrzne4.jpg",
+        url5: "assets/imgs/zewnetrzne5.jpg",
+        url6: "assets/imgs/zew9.jpg",
         name: "Zewnętrzne",
         info: "Rolety zewnętrzne cieszą się największym zainteresowaniem," +
          "a zawdzięczają to swojej wielofunkcyjności oraz wysokiej estetyce.",
@@ -102,11 +123,14 @@ export class BlindService {
       },
       {
         id:8,
+        urlOkladka: "assets/imgs/okladka.jpg",
         url1: "assets/imgs/wolnowiszace1.jpg",
         url2:"assets/imgs/wolnowiszace2.jpg",
-        url3: "assets/imgs/wolnowiszace1.jpg",
-        url4:"assets/imgs/wolnowiszace2.jpg",
-        name: "Wolnowiszące",
+        url3: "assets/imgs/wolnowiszace3.jpg",
+        url4:"assets/imgs/wolno4.jpg",
+        url5: "assets/imgs/wolno5.jpg",
+        url6: "assets/imgs/wolno6.jpg",
+        name: "Rolety BS",
         info: "Ten typ dekoracji sprawdzi się szczególnie gdy zależy" +
          "nam na osłonięciu dużych powierzchni okiennych. Szeroka gama" +
          "kolorystyczna gwarantuje dopasowanie rolet do każdego wnętrza.",
@@ -115,10 +139,13 @@ export class BlindService {
       },
       {
         id:9,
+        urlOkladka: "assets/imgs/okladka.jpg",
         url1: "assets/imgs/moskitiera1.jpg",
         url2:"assets/imgs/moskitiera2.jpg",
-        url3: "assets/imgs/moskitiera3.jpg",
-        url4:"assets/imgs/moskitiera4.jpg",
+        url3: "assets/imgs/moskitiera4.jpg",
+        url4:"assets/imgs/moskitiera5.jpg",
+        url5: "assets/imgs/moskitiera2.jpg",
+        url6: "assets/imgs/moskitiera4.jpg",
         name: "Moskitiery",
         info: "Moskitiery to idealny sposób na walkę z wszelkimi insektami," +
          "które po otwarciu okien czy drzwi próbują przedostać się do naszego" +
@@ -129,10 +156,13 @@ export class BlindService {
       },
       {
         id:10,
+        urlOkladka: "assets/imgs/okladka.jpg",
         url1: "assets/imgs/drewno1.jpg",
         url2:"assets/imgs/drewno2.jpg",
         url3: "assets/imgs/drewno3.jpg",
         url4:"assets/imgs/drewno4.jpg",
+        url5: "assets/imgs/drewno5.jpg",
+        url6: "assets/imgs/drewno6.jpg",
         name: "Żaluzje drewniane",
         info: "Drewno to materiał, którego użycia sprawia, że" +
         "przytulność i ciepło danego pomieszczenia znacznie wzrasta.",
@@ -141,10 +171,13 @@ export class BlindService {
       },
       {
         id:11,
+        urlOkladka: "assets/imgs/okladka.jpg",
         url1: "assets/imgs/brama1.jpg",
         url2:"assets/imgs/brama2.jpg",
         url3: "assets/imgs/brama3.jpg",
-        url4:"assets/imgs/brama4.jpg",
+        url4:"assets/imgs/brama1.jpg",
+        url5: "assets/imgs/brama4.jpg",
+        url6: "assets/imgs/brama3.jpg",
         name: "Bramy",
         info: "Bramy tego typu znajdują zastosowanie nie tylko w budynkach mieszkalnych, ale także przemysłowych." + 
         "Mechanizm jest w pełni zautomatyzowany z możliwością otwierania awaryjnego.",

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CrudService } from './../services/crud.service';
 import { FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-booking',
@@ -18,7 +19,8 @@ export class BookingPage implements OnInit {
   constructor(
     private crudService: CrudService,
     public formBuilder: FormBuilder,    
-    private router: Router
+    private router: Router,
+    private alertCtrl: AlertController
   ) { }
 
   ngOnInit() {
@@ -52,10 +54,28 @@ export class BookingPage implements OnInit {
       return false;
     } else {
       this.crudService.create(this.bookingForm.value)
-      .then(() => {
-        this.bookingForm.reset();
-        this.router.navigate(['/offer']);
-      })
+      .then(
+        async () =>{
+         const alert = await this.alertCtrl.create({
+          header: 'Potwierdzenie',
+          cssClass: 'alert',
+          message: 'Dziękujemy za dokonanie rezerwacji.'+
+            'W ciągu dwóch dni roboczych otrzymasz wiadomość z potwierdzeniem daty wizyty naszego fachowca.',
+           buttons:[{text:'Ok',role:'cancel',handler:() =>{
+             this.router.navigateByUrl('offer');
+           },},],
+         });
+         await alert.present();
+       },
+       async error => {
+         const errorAlert = await this.alertCtrl.create({
+           message: error.message,
+           buttons:[{text:'Ok',role:'cancel'}],
+           
+         });
+         await errorAlert.present();
+         }
+       );
+      }
     }
   }
-}

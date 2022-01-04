@@ -10,7 +10,6 @@ import { FirebaseAuthService } from '../firebase-auth.service';
   styleUrls: ['./resetpass.page.scss'],
 })
 export class ResetpassPage implements OnInit {
- 
 
   constructor(private authService: FirebaseAuthService,
      private router: Router, private alrtCtrl: AlertController
@@ -23,6 +22,8 @@ export class ResetpassPage implements OnInit {
     then(
      async () =>{
       const alert = await this.alrtCtrl.create({
+        cssClass: 'alert',
+        header:'Potwierdzenie',
         message: 'Na twoją skrzynkę mailową został wysłany link umożliwiający zmianę hasła',
         buttons:[{text:'Ok',role:'cancel',handler:() =>{
           this.router.navigateByUrl('login');
@@ -32,7 +33,8 @@ export class ResetpassPage implements OnInit {
     },
     async error => {
       const errorAlert = await this.alrtCtrl.create({
-        message: error.message,
+        header:'Uwaga',
+        message: 'Podano nieprawidłowy adres email',
         buttons:[{text:'Ok',role:'cancel'}],
         
       });
