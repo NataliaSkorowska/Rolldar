@@ -5,6 +5,7 @@ import { first } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import "firebase/auth";
+import { AlertController } from '@ionic/angular';
 
 
 export class Booking {
@@ -26,7 +27,8 @@ export class BookingsPage implements OnInit {
 
   constructor(private crudService: CrudService,
     private firestore: AngularFirestore,
-    private router: Router) { }
+    private router: Router,
+    private alertCtrl: AlertController) { }
 
    async ngOnInit() {
     this.crudService.getBookings().subscribe((res) => {
@@ -71,12 +73,23 @@ export class BookingsPage implements OnInit {
       console.log(data)
     })
   }
-  remove(id) {
+  async remove(id) {
     console.log(id)
-    if (window.confirm('Jesteś pewny, że chcesz usunąć?')) {
-      this.crudService.delete(id)
+    {
+      const alert = await this.alertCtrl.create({
+        header: 'Uwaga',
+        message: 'Na pewno chcesz usunąć to zamówienie?',
+        buttons:[{text:'Tak',role:'cancel',handler:() =>{
+          this.crudService.delete(id);
+        },},
+        {
+          text: 'Anuluj'
+        }]
+      });
+      await alert.present();
     }
-  } 
+  }
+
   goToBookingPage(id: number) {
     this.router.navigate(['updatebooking', id]);
   }

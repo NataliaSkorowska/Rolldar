@@ -5,39 +5,40 @@
      </ion-title>  
    </ion-toolbar>   
 </ion-header>
-<ion-content>
-<div id="container">
+<ion-content class="ion-padding ion-text-center" color="primary">
+<div>
     <ion-grid class="ion-align-items-center">
       <ion-row>
         <ion-col>
-          <img src="./assets/imgs/LogoCircle2.png">
+          <img src="./assets/imgs/Rolldar.png">
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col class="hometext">
-          <span>ZALOGUJ SIĘ JAKO </span>
+          <ion-card-header>ZALOGUJ SIĘ JAKO </ion-card-header>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>
-          <ion-button class="button-add" routerLink="/sign-in">
-            <ion-icon name="person-outline"></ion-icon>&nbsp;
-           Klient
+        <ion-col class="buttonsColumn">
+          <ion-button color="light" routerLink="/sign-in">
+            <ion-icon color="primary" name="person-outline"></ion-icon>&nbsp;
+           <p> Klient </p>
           </ion-button>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col>
-          <ion-button class="button-show" routerLink="/employeelogin">
-            <ion-icon name="people-circle-outline"></ion-icon>&nbsp;
-            Pracownik
+          <ion-button color="light" routerLink="/employeelogin">
+            <ion-icon color="primary" name="people-circle-outline"></ion-icon>&nbsp;
+           <p> Pracownik </p>
           </ion-button>
         </ion-col>
       </ion-row>
+
       <ion-row>
         <ion-col>
         </ion-col>
       </ion-row>
-    </ion-grid>
-  </div>   
+    </ion-grid>  
+</div>
 </ion-content>

@@ -16,7 +16,7 @@ export class BlindService {
         url4:"assets/imgs/alumin1.jpg",
         url5: "assets/imgs/alumin5.jpg",
         url6: "assets/imgs/alum6.jpg",
-        name: "Aluminiowe",
+        name: "Żaluzje z aluminium",
         info: "Sprawdzą się idealnie nie tylko w sypialni czy salonie," +
          "ale także w kuchni czy łazience, gdyż aluminium charakteryzuje się" +
           "wysoką odpornością na wilgoć oraz wodę.",

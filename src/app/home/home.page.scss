@@ -1,13 +1,19 @@
+ion-content{
+  background-color: #c60000;
+}
+ion-card-header{
+  color: #fff;
+}
+
+
 #container {
     text-align: center;
-  
     position: absolute;
     left: 0;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
   }
-  
   #container strong {
     font-size: 20px;
     line-height: 26px;
@@ -16,9 +22,7 @@
   #container p {
     font-size: 16px;
     line-height: 22px;
-  
     color: #8c8c8c;
-  
     margin: 0;
   }
   
@@ -27,7 +31,7 @@
   }
   
   .hometext{
-    color: #c60000;
+    color: #fff;
     font-size: 16px;
     font-weight: 700;
   }
@@ -39,4 +43,18 @@
     font-weight: 400;
     font-size: large
   }
+}
+ion-button{
+  background-color: #c60000;
+  color: #fff;
+}
+ion-card{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+  border-radius: 20px;
+}
+.buttonsColumn{
+  color:#c60000;
+}
+p{
+  color:#c60000
 }

@@ -15,6 +15,7 @@ export class BookingPage implements OnInit {
   submitError: string;
   isSubmitted = false;
   defaultDate = "2022-01-01";
+  defaultHour ="";
 
   constructor(
     private crudService: CrudService,
@@ -32,8 +33,7 @@ export class BookingPage implements OnInit {
       service:['',[Validators.required]],
       blindType:['',[Validators.required]],
       status:['nowy'],
-      bookingDate: [this.defaultDate],
-      image: ['']
+      bookingDate: [this.defaultDate]
     })
   }
 

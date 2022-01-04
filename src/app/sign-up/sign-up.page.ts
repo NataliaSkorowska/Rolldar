@@ -54,13 +54,13 @@ export class SignUpPage {
     this.authRedirectResult = this.authService.getRedirectResult()
     .subscribe(result => {
       if (result.user) {
-        this.redirectLoggedUserToProfilePage();
+        this.redirectLoggedUserToOfferPage();
       } else if (result.error) {
         this.submitError = result.error;
       }
     });
   }
-  redirectLoggedUserToProfilePage() {
+  redirectLoggedUserToOfferPage() {
     this.ngZone.run(() => {
       this.router.navigate(['offer']);
     });
@@ -69,7 +69,7 @@ export class SignUpPage {
   signUpWithEmail() {
     this.authService.signUpWithEmail(this.signUpForm.value['email'], this.signUpForm.value['password'])
     .then(user => {
-      this.redirectLoggedUserToProfilePage();
+      this.redirectLoggedUserToOfferPage();
     })
     .catch(error => {
       this.submitError = "Ten adres email jest już przypisany do konta";
