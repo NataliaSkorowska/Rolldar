@@ -27,9 +27,9 @@ export class OfferPage implements OnInit {
         this.user = result['data'];
       }, (err) => {})
   }
+
   signOut() {
     this.authService.signOut().subscribe(() => {
-      // Sign-out successful.
       this.router.navigate(['sign-in']);
     }, (error) => {
       console.log('signout error', error);

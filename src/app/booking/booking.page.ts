@@ -33,7 +33,9 @@ export class BookingPage implements OnInit {
       service:['',[Validators.required]],
       blindType:['',[Validators.required]],
       status:['nowy'],
-      bookingDate: [this.defaultDate]
+      bookingDate: [this.defaultDate],
+      startTime:['',[Validators.required]],
+      endTime:['',[Validators.required]],
     })
   }
 

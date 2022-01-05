@@ -9,7 +9,9 @@
 <ion-content >
   <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" >
     <ion-item>
-      <ion-label color="primary" position="floating">Imię i nazwisko</ion-label>
+      <ion-label color="primary" position="floating">
+        <span item-left><ion-icon name="person"></ion-icon> </span>
+        Imię i nazwisko</ion-label>
       <ion-input autofocus=true formControlName="name"></ion-input>
     </ion-item>
     <div class="error-container">
@@ -21,7 +23,9 @@
       </ng-container>
     </div>
     <ion-item>
-      <ion-label color="primary" position="floating">Adres</ion-label>
+      <ion-label color="primary" position="floating">
+        <span item-left><ion-icon name="home"></ion-icon> </span>
+        Adres</ion-label>
       <ion-input  formControlName="address"></ion-input>
     </ion-item>
     <div class="error-container">
@@ -33,7 +37,9 @@
       </ng-container>
     </div>
     <ion-item>
-      <ion-label color="primary" position="floating">Numer telefonu</ion-label>
+      <ion-label color="primary" position="floating">
+        <span item-left><ion-icon name="call"></ion-icon> </span>
+        Numer telefonu</ion-label>
       <ion-input formControlName="mobile"></ion-input>
     </ion-item>
     <div class="error-container">
@@ -45,7 +51,9 @@
       </ng-container>
     </div>
     <ion-item>
-      <ion-label  color="primary" position="floating">Adres email</ion-label>
+      <ion-label  color="primary" position="floating">
+        <span item-left><ion-icon name="mail"></ion-icon> </span>
+        Adres email</ion-label>
       <ion-input  formControlName="email"></ion-input>
     </ion-item>
     <div class="error-container">
@@ -57,7 +65,9 @@
       </ng-container>
     </div>
     <ion-item>
-      <ion-label color="primary">Status</ion-label>
+      <ion-label color="primary" position="floating">
+        <span item-left><ion-icon name="list-circle"></ion-icon> </span>
+        Status</ion-label>
       <ion-select formControlName="status" name="status">
       <ion-select-option value="nowy">Nowy</ion-select-option>
       <ion-select-option value="w realizacji">W realizacji</ion-select-option>
@@ -73,9 +83,31 @@
       </ng-container>
     </div>
     <ion-item lines="full">
-      <ion-label position="floating">Data</ion-label>
+      <ion-label color= "primary" position="floating">
+        <span item-left><ion-icon name="today"></ion-icon> </span>
+        Data</ion-label>
       <ion-datetime (ionChange)="getDate($event)" formControlName="bookingDate" [value]="defaultDate"></ion-datetime>
     </ion-item>
+    <ion-item>
+      <ion-label color="primary" position="stacked">
+        <span item-left><ion-icon name="time"></ion-icon> </span>
+        Rozpoczęcie usługi możliwe od godziny</ion-label>
+      <ion-datetime formControlName="startTime" displayFormat="HH:mm"></ion-datetime>
+    </ion-item>
+    <span class="error-message" *ngIf="isSubmitted && errorControl.startTime.errors?.required">
+      <ion-icon name="information-circle-outline"></ion-icon>
+      Wybierz preferowaną godzinę
+    </span>
+    <ion-item>
+      <ion-label color="primary" position="stacked">
+        <span item-left><ion-icon name="time"></ion-icon> </span>
+        Realizacja usługi możliwa do godziny</ion-label>
+      <ion-datetime formControlName="endTime" displayFormat="HH:mm"></ion-datetime>
+    </ion-item>
+    <span class="error-message" *ngIf="isSubmitted && errorControl.endTime.errors?.required">
+      <ion-icon name="information-circle-outline"></ion-icon>
+      Wybierz preferowaną godzinę
+    </span>
     <ion-button type="submit" expand="block"> Zatwierdź edycję</ion-button>
   </form>
 </ion-content>

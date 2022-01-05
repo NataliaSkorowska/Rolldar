@@ -8,11 +8,12 @@ import "firebase/auth";
 import { AlertController } from '@ionic/angular';
 
 
+
 export class Booking {
   $key: string;
   title: string;
   description: string;
-}
+} 
 
 @Component({
   selector: 'app-bookings',

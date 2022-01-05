@@ -55,7 +55,9 @@ export class UpdatebookingPage implements OnInit {
       address: new FormControl(''),
       email: new FormControl(''),
       status: new FormControl(''),
-      bookingDate: new FormControl('')
+      bookingDate: new FormControl(''),
+      startTime: new FormControl(''),
+      endTime: new FormControl('')
     });
     }
     get errorControl() {
@@ -77,7 +79,9 @@ export class UpdatebookingPage implements OnInit {
             Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
           ])),
           'status': new FormControl (data.status,[Validators.required]),
-          bookingDate: new FormControl(data.bookingDate)
+          bookingDate: new FormControl(data.bookingDate),
+          startTime: new FormControl(data.startTime),
+          endTime: new FormControl(data.endTime)
         });
       });
   }

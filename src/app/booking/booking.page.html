@@ -10,8 +10,12 @@
 <ion-content class="ion-padding">
   <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
     <ion-item>
-      <ion-label  position="floating">Imie i nazwisko</ion-label>
-      <ion-input formControlName="name" type="text" required></ion-input>
+      <ion-label color="primary" position="stacked">
+        <span item-left><ion-icon name="person"></ion-icon> </span>
+        Imie i nazwisko     
+      </ion-label>
+      <ion-input formControlName="name" type="text" required>
+      </ion-input>     
     </ion-item>
     <span class="error-message" *ngIf="isSubmitted && errorControl.name.errors?.required">
       <ion-icon name="information-circle-outline"></ion-icon>
@@ -22,7 +26,9 @@
       Imie i nazwisko powinno zawierać co najmniej 6 znaków
     </span>
     <ion-item>
-      <ion-label position="floating">Adres</ion-label>
+      <ion-label color="primary" position="stacked">
+        <span item-left><ion-icon name="home"></ion-icon> </span>
+        Adres</ion-label>
       <ion-input formControlName="address" type="text" required>
       </ion-input>
     </ion-item>
@@ -35,7 +41,9 @@
       Adres powinien zawierać co najmniej 6 znaków
     </span>
      <ion-item>
-      <ion-label position="floating">Numer telefonu</ion-label>
+      <ion-label color="primary" position="stacked">
+        <span item-left><ion-icon name="call"></ion-icon> </span>
+        Numer telefonu</ion-label>
       <ion-input formControlName="mobile" type="text" required>
       </ion-input>
     </ion-item>
@@ -48,7 +56,9 @@
       Wprowadź prawidłowy numer telefonu
     </span>
       <ion-item>
-      <ion-label position="floating">Adres email</ion-label>
+      <ion-label color="primary" position="stacked">
+        <span item-left><ion-icon name="mail"></ion-icon> </span>
+        Adres email</ion-label>
       <ion-input formControlName="email" type="text" required>
       </ion-input>
     </ion-item>
@@ -61,7 +71,9 @@
       Wprowadź prawidłowy adres email
     </span>
     <ion-item>
-    <ion-label>Wybierz usługę</ion-label>
+    <ion-label color="primary" position="stacked">
+      <span item-left><ion-icon name="hammer"></ion-icon> </span>
+      Wybierz usługę</ion-label>
     <ion-select formControlName="service" name="service">
     <ion-select-option value="pomiar">Pomiar</ion-select-option>
     <ion-select-option value="montaż">Montaż</ion-select-option>
@@ -72,8 +84,10 @@
   <ion-icon name="information-circle-outline"></ion-icon>
   Wybierz rodzaj usługi
 </span>
-  <ion-item>
-    <ion-label >Rodzaj rolety</ion-label>
+  <ion-item> 
+    <ion-label color="primary" position="stacked">
+    <span item-left><ion-icon name="grid"></ion-icon> </span>
+    Rodzaj rolety</ion-label> 
     <ion-select formControlName="blindType" name="blindType">
     <ion-select-option value="Moskitiera" >Moskitiera</ion-select-option>
     <ion-select-option value="Markiza">Markiza</ion-select-option>
@@ -86,14 +100,32 @@
     <ion-select-option value="Roleta dzień i noc">Roleta dzień i noc</ion-select-option>
 </ion-select>
 </ion-item>
-<span class="error-message" *ngIf="isSubmitted && errorControl.service.errors?.required">
+<span class="error-message" *ngIf="isSubmitted && errorControl.blindType.errors?.required">
   <ion-icon name="information-circle-outline"></ion-icon>
   Wybierz rodzaj rolety
 </span>
 <ion-item>
-  <ion-label position="floating">Wybierz dzień</ion-label>
+  <ion-label color="primary" position="stacked">
+    <span item-left><ion-icon name="today"></ion-icon> </span>
+    Wybierz dzień</ion-label>
   <ion-datetime  min="2021-12-12" max="2025-01-01" (ionChange)="getDate($event)" formControlName="bookingDate" [value]="defaultDate"></ion-datetime>
 </ion-item>
+<ion-item>
+  <ion-label color="primary" position="stacked">Od której masz czas?</ion-label>
+  <ion-datetime formControlName="startTime" displayFormat="HH:mm"></ion-datetime>
+</ion-item>
+<span class="error-message" *ngIf="isSubmitted && errorControl.startTime.errors?.required">
+  <ion-icon name="information-circle-outline"></ion-icon>
+  Wybierz preferowaną godzinę
+</span>
+<ion-item>
+  <ion-label color="primary" position="stacked">Do której masz czas?</ion-label>
+  <ion-datetime formControlName="endTime" displayFormat="HH:mm"></ion-datetime>
+</ion-item>
+<span class="error-message" *ngIf="isSubmitted && errorControl.endTime.errors?.required">
+  <ion-icon name="information-circle-outline"></ion-icon>
+  Wybierz preferowaną godzinę
+</span>
     <ion-button class="ion-margin-top" type="submit" expand="block" color="primary">Rezerwuj</ion-button>
   </form>
 </ion-content>

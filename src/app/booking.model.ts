@@ -6,5 +6,6 @@ export class Booking {
     address: string;
     status:string;
     bookingDate: Date;
-    image: string;
+    startTime: Date;
+    endTime: Date;
   }
