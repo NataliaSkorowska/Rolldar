@@ -48,6 +48,11 @@ export class AdminauthService {
         role: 'USER'
       };
     }
+    else{
+      user={
+        role: 'UNDEFINED'
+      }
+    }
     this.authState.next(user);
     return of(user);
   }

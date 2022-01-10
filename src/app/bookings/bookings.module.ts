@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { BookingsPageRoutingModule } from './bookings-routing.module';
-
 import { BookingsPage } from './bookings.page';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -13,6 +13,7 @@ import { BookingsPage } from './bookings.page';
     FormsModule,
     IonicModule,
     BookingsPageRoutingModule,
+     Ng2SearchPipeModule
   ],
   declarations: [BookingsPage]
 })

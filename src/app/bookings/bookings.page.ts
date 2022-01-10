@@ -7,8 +7,6 @@ import * as firebase from 'firebase/app';
 import "firebase/auth";
 import { AlertController } from '@ionic/angular';
 
-
-
 export class Booking {
   $key: string;
   title: string;
@@ -22,9 +20,10 @@ export class Booking {
 })
 export class BookingsPage implements OnInit {
 
-  public Bookings: Booking[];
+  public Bookings: Booking[] = [];
   public BookingsBackup: any[];
   public isAdmin: boolean;
+  term: '';
 
   constructor(private crudService: CrudService,
     private firestore: AngularFirestore,
@@ -50,9 +49,8 @@ export class BookingsPage implements OnInit {
     return this.bookings;
   }
 
- filterList(evt) {
+ filter(evt) {
   this.initializeItems();
-
   const searchTerm = evt.srcElement.value;
 
   if (!searchTerm) {
@@ -89,6 +87,13 @@ export class BookingsPage implements OnInit {
       });
       await alert.present();
     }
+  }
+
+  reorderList(e) {
+    console.log(`Item moved ${e.detail.from} to ${e.detail.to}`);
+     let movedItem = this.BookingsBackup.splice(e.detail.from,1)[0];
+     this.BookingsBackup.splice(e.detail.to, 0, movedItem)
+     e.detail.complete();
   }
 
   goToBookingPage(id: number) {
