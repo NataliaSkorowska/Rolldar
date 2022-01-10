@@ -2,33 +2,48 @@
   <ion-toolbar>
     <ion-title>Zamówienia</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button text="" defaultHref="/admin-main-page/"></ion-back-button>
+      <ion-back-button
+        text=""
+        defaultHref="/admin-main-page/"
+      ></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content> 
+
+<ion-content>
   <ion-searchbar
-  placeholder="Wyszukaj" 
-  [(ngModel)]="term" 
-  (ionInput)="filter($event)">
+    placeholder="Wyszukaj"
+    [(ngModel)]="term"
+    (ionInput)="filter($event)"
+  >
   </ion-searchbar>
   <ion-list>
     <ion-reorder-group (ionItemReorder)="reorderList($event)" disabled="false">
-    <ion-item *ngFor="let booking of Bookings | filter:term" lines="full">
-      <div item-start >
-        <ion-reorder slot="start">
-          <ion-icon  color="primary" name="list"></ion-icon>
-        </ion-reorder>
-      </div>
-      <ion-label class="bookingDetails">
-        <strong>{{booking.name}}</strong>
-        <p>{{booking.status}}</p>
-      </ion-label>
-      <div item-end>
-          <ion-icon color="primary" name="create-outline" (click)="goToBookingPage(booking.id)" style="zoom:1.5"></ion-icon>
-          <ion-icon color="primary" name="trash-outline" (click)="remove(booking.id)" style="zoom:1.5"></ion-icon>
-      </div>
-    </ion-item>
-  </ion-reorder-group>
+      <ion-item *ngFor="let booking of Bookings | filter:term" lines="full">
+        <div item-start>
+          <ion-reorder slot="start">
+            <ion-icon color="primary" name="list"></ion-icon>
+          </ion-reorder>
+        </div>
+        <ion-label class="bookingDetails">
+          <strong>{{booking.name}}</strong>
+          <p>{{booking.status}}</p>
+        </ion-label>
+        <div item-end>
+          <ion-icon
+            color="primary"
+            name="create-outline"
+            (click)="goToBookingPage(booking.id)"
+            style="zoom: 1.5"
+          ></ion-icon>
+          <ion-icon
+            color="primary"
+            name="trash-outline"
+            (click)="remove(booking.id)"
+            style="zoom: 1.5"
+          ></ion-icon>
+        </div>
+      </ion-item>
+    </ion-reorder-group>
   </ion-list>
 </ion-content>

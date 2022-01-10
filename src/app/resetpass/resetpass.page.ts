@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { async } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { FirebaseAuthService } from '../firebase-auth.service';
+import { FirebaseAuthService } from '../services/firebase-auth.service';
 
 @Component({
   selector: 'app-resetpass',

@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { InvoicesPageRoutingModule } from './invoices-routing.module';
 
 import { InvoicesPage } from './invoices.page';
-import { FileSizeFormatPipe} from '../filesize.pipe'
+import { FileSizePipe} from '../services/filesize.pipe'
 
 @NgModule({
   imports: [
@@ -16,6 +16,6 @@ import { FileSizeFormatPipe} from '../filesize.pipe'
     IonicModule,
     InvoicesPageRoutingModule
   ],
-  declarations: [InvoicesPage, FileSizeFormatPipe]
+  declarations: [InvoicesPage, FileSizePipe]
 })
 export class InvoicesPageModule {}

@@ -2,13 +2,11 @@ import { Component, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FirebaseAuthService } from '../firebase-auth.service';
+import { FirebaseAuthService } from '../services/firebase-auth.service';
 import { Subscription } from 'rxjs';
 import * as firebase from 'firebase/app';
 import { Observable } from 'rxjs/internal/Observable';
 import { AngularFireDatabase } from "@angular/fire/database";
-import { AlertController } from '@ionic/angular';
-import { LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-sign-in',

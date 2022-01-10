@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdminauthService } from '../adminauth.service';
+import { AdminauthService } from '../services/adminauth.service';
 import { AlertController } from '@ionic/angular';
 
 @Component({

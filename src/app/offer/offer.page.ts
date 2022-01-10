@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Blind } from './blind.model';
-import { BlindService } from '../blind.service';
-import { FirebaseAuthService } from '../firebase-auth.service';
+import { BlindService } from '../services/blind.service';
+import { FirebaseAuthService } from '../services/firebase-auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { ProfileModel } from '../profile/profile.model';
 

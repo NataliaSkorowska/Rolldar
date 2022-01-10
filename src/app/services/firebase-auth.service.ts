@@ -4,13 +4,13 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable, Subject, from } from 'rxjs';
 import { Platform } from '@ionic/angular';
 import { User, auth } from 'firebase/app';
-import { ProfileModel } from './profile/profile.model';
+import { ProfileModel } from '../profile/profile.model';
 import { filter, map, take, tap, switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import * as firebase from 'firebase/app'
 import 'firebase/auth'
-import { EmployeeloginPageRoutingModule } from './employeelogin/employeelogin-routing.module';
+import { EmployeeloginPageRoutingModule } from '../employeelogin/employeelogin-routing.module';
 
 @Injectable()
 export class FirebaseAuthService {

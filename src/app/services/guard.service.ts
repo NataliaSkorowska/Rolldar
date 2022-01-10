@@ -9,7 +9,7 @@ import {
 import { Observable } from "rxjs";
 import * as firebase from 'firebase/app';
 import "firebase/auth";
-import { AdminauthService } from "../adminauth.service";
+import { AdminauthService } from "./adminauth.service";
 
 @Injectable({
   providedIn: "root",

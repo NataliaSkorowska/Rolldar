@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Rezerwuj</ion-title>
-       <ion-buttons slot="start">
+    <ion-buttons slot="start">
       <ion-back-button text="" defaultHref="/offer/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
@@ -12,120 +12,192 @@
     <ion-item>
       <ion-label color="primary" position="stacked">
         <span item-left><ion-icon name="person"></ion-icon> </span>
-        Imie i nazwisko     
+        Imie i nazwisko
       </ion-label>
-      <ion-input formControlName="name" type="text" required>
-      </ion-input>     
+      <ion-input formControlName="name" type="text" required> </ion-input>
     </ion-item>
-    <span class="error-message" *ngIf="isSubmitted && errorControl.name.errors?.required">
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.name.errors?.required"
+    >
       <ion-icon name="information-circle-outline"></ion-icon>
       Imię i nazwisko wymagane
     </span>
-    <span class="error-message" *ngIf="isSubmitted && errorControl.name.errors?.minlength">
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.name.errors?.minlength"
+    >
       <ion-icon name="information-circle-outline"></ion-icon>
       Imie i nazwisko powinno zawierać co najmniej 6 znaków
     </span>
     <ion-item>
       <ion-label color="primary" position="stacked">
         <span item-left><ion-icon name="home"></ion-icon> </span>
-        Adres</ion-label>
-      <ion-input formControlName="address" type="text" required>
-      </ion-input>
+        Adres</ion-label
+      >
+      <ion-input formControlName="address" type="text" required> </ion-input>
     </ion-item>
-    <span class="error-message" *ngIf="isSubmitted && errorControl.address.errors?.required">
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.address.errors?.required"
+    >
       <ion-icon name="information-circle-outline"></ion-icon>
       Adres jest wymagany
     </span>
-    <span class="error-message" *ngIf="isSubmitted && errorControl.name.errors?.minlength">
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.name.errors?.minlength"
+    >
       <ion-icon name="information-circle-outline"></ion-icon>
       Adres powinien zawierać co najmniej 6 znaków
     </span>
-     <ion-item>
+    <ion-item>
       <ion-label color="primary" position="stacked">
         <span item-left><ion-icon name="call"></ion-icon> </span>
-        Numer telefonu</ion-label>
-      <ion-input formControlName="mobile" type="text" required>
-      </ion-input>
+        Numer telefonu</ion-label
+      >
+      <ion-input formControlName="mobile" type="text" required> </ion-input>
     </ion-item>
-    <span class="error-message" *ngIf="isSubmitted && errorControl.mobile.errors?.required">
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.mobile.errors?.required"
+    >
       <ion-icon name="information-circle-outline"></ion-icon>
       Numer telefonu jest wymagany
     </span>
-    <span class="error-message" *ngIf="isSubmitted && errorControl.mobile.errors?.pattern">
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.mobile.errors?.pattern"
+    >
       <ion-icon name="information-circle-outline"></ion-icon>
       Wprowadź prawidłowy numer telefonu
     </span>
-      <ion-item>
+    <ion-item>
       <ion-label color="primary" position="stacked">
         <span item-left><ion-icon name="mail"></ion-icon> </span>
-        Adres email</ion-label>
-      <ion-input formControlName="email" type="text" required>
-      </ion-input>
+        Adres email</ion-label
+      >
+      <ion-input formControlName="email" type="text" required> </ion-input>
     </ion-item>
-    <span class="error-message" *ngIf="isSubmitted && errorControl.email.errors?.required">
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.email.errors?.required"
+    >
       <ion-icon name="information-circle-outline"></ion-icon>
       Adres email wymagany
     </span>
-    <span class="error-message" *ngIf="isSubmitted && errorControl.email.errors?.pattern">
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.email.errors?.pattern"
+    >
       <ion-icon name="information-circle-outline"></ion-icon>
       Wprowadź prawidłowy adres email
     </span>
     <ion-item>
-    <ion-label color="primary" position="stacked">
-      <span item-left><ion-icon name="hammer"></ion-icon> </span>
-      Wybierz usługę</ion-label>
-    <ion-select formControlName="service" name="service">
-    <ion-select-option value="pomiar">Pomiar</ion-select-option>
-    <ion-select-option value="montaż">Montaż</ion-select-option>
-    <ion-select-option value="awaria">Awaria</ion-select-option>
-</ion-select>
-</ion-item>
-<span class="error-message" *ngIf="isSubmitted && errorControl.service.errors?.required">
-  <ion-icon name="information-circle-outline"></ion-icon>
-  Wybierz rodzaj usługi
-</span>
-  <ion-item> 
-    <ion-label color="primary" position="stacked">
-    <span item-left><ion-icon name="grid"></ion-icon> </span>
-    Rodzaj rolety</ion-label> 
-    <ion-select formControlName="blindType" name="blindType">
-    <ion-select-option value="Moskitiera" >Moskitiera</ion-select-option>
-    <ion-select-option value="Markiza">Markiza</ion-select-option>
-    <ion-select-option value="Żaluzja drewniana">Żaluzja drewniana</ion-select-option>
-     <ion-select-option value="Żaluzja aluminiowa">Żaluzja aluminiowa</ion-select-option>
-    <ion-select-option value="Roleta dzień i noc">Roleta dzień i noc</ion-select-option>
-    <ion-select-option value="Roleta plisowana">Roleta plisowana</ion-select-option>
-    <ion-select-option value="Zasłona">Zasłona</ion-select-option>
-     <ion-select-option value="Brama rolowana">Brama rolowana</ion-select-option>
-    <ion-select-option value="Roleta dzień i noc">Roleta dzień i noc</ion-select-option>
-</ion-select>
-</ion-item>
-<span class="error-message" *ngIf="isSubmitted && errorControl.blindType.errors?.required">
-  <ion-icon name="information-circle-outline"></ion-icon>
-  Wybierz rodzaj rolety
-</span>
-<ion-item>
-  <ion-label color="primary" position="stacked">
-    <span item-left><ion-icon name="today"></ion-icon> </span>
-    Wybierz dzień</ion-label>
-  <ion-datetime  min="2021-12-12" max="2025-01-01" (ionChange)="getDate($event)" formControlName="bookingDate" [value]="defaultDate"></ion-datetime>
-</ion-item>
-<ion-item>
-  <ion-label color="primary" position="stacked">Od której masz czas?</ion-label>
-  <ion-datetime formControlName="startTime" displayFormat="HH:mm"></ion-datetime>
-</ion-item>
-<span class="error-message" *ngIf="isSubmitted && errorControl.startTime.errors?.required">
-  <ion-icon name="information-circle-outline"></ion-icon>
-  Wybierz preferowaną godzinę
-</span>
-<ion-item>
-  <ion-label color="primary" position="stacked">Do której masz czas?</ion-label>
-  <ion-datetime formControlName="endTime" displayFormat="HH:mm"></ion-datetime>
-</ion-item>
-<span class="error-message" *ngIf="isSubmitted && errorControl.endTime.errors?.required">
-  <ion-icon name="information-circle-outline"></ion-icon>
-  Wybierz preferowaną godzinę
-</span>
-    <ion-button class="ion-margin-top" type="submit" expand="block" color="primary">Rezerwuj</ion-button>
+      <ion-label color="primary" position="stacked">
+        <span item-left><ion-icon name="hammer"></ion-icon> </span>
+        Wybierz usługę</ion-label
+      >
+      <ion-select formControlName="service" name="service">
+        <ion-select-option value="pomiar">Pomiar</ion-select-option>
+        <ion-select-option value="montaż">Montaż</ion-select-option>
+        <ion-select-option value="awaria">Awaria</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.service.errors?.required"
+    >
+      <ion-icon name="information-circle-outline"></ion-icon>
+      Wybierz rodzaj usługi
+    </span>
+    <ion-item>
+      <ion-label color="primary" position="stacked">
+        <span item-left><ion-icon name="grid"></ion-icon> </span>
+        Rodzaj rolety</ion-label
+      >
+      <ion-select formControlName="blindType" name="blindType">
+        <ion-select-option value="Moskitiera">Moskitiera</ion-select-option>
+        <ion-select-option value="Markiza">Markiza</ion-select-option>
+        <ion-select-option value="Żaluzja drewniana"
+          >Żaluzja drewniana</ion-select-option
+        >
+        <ion-select-option value="Żaluzja aluminiowa"
+          >Żaluzja aluminiowa</ion-select-option
+        >
+        <ion-select-option value="Roleta dzień i noc"
+          >Roleta dzień i noc</ion-select-option
+        >
+        <ion-select-option value="Roleta plisowana"
+          >Roleta plisowana</ion-select-option
+        >
+        <ion-select-option value="Zasłona">Zasłona</ion-select-option>
+        <ion-select-option value="Brama rolowana"
+          >Brama rolowana</ion-select-option
+        >
+        <ion-select-option value="Roleta dzień i noc"
+          >Roleta dzień i noc</ion-select-option
+        >
+      </ion-select>
+    </ion-item>
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.blindType.errors?.required"
+    >
+      <ion-icon name="information-circle-outline"></ion-icon>
+      Wybierz rodzaj rolety
+    </span>
+    <ion-item>
+      <ion-label color="primary" position="stacked">
+        <span item-left><ion-icon name="today"></ion-icon> </span>
+        Wybierz dzień</ion-label
+      >
+      <ion-datetime
+        min="2021-12-12"
+        max="2025-01-01"
+        (ionChange)="getDate($event)"
+        formControlName="bookingDate"
+        [value]="defaultDate"
+      ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" position="stacked"
+        >Od której masz czas?</ion-label
+      >
+      <ion-datetime
+        formControlName="startTime"
+        displayFormat="HH:mm"
+      ></ion-datetime>
+    </ion-item>
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.startTime.errors?.required"
+    >
+      <ion-icon name="information-circle-outline"></ion-icon>
+      Wybierz preferowaną godzinę
+    </span>
+    <ion-item>
+      <ion-label color="primary" position="stacked"
+        >Do której masz czas?</ion-label
+      >
+      <ion-datetime
+        formControlName="endTime"
+        displayFormat="HH:mm"
+      ></ion-datetime>
+    </ion-item>
+    <span
+      class="error-message"
+      *ngIf="isSubmitted && errorControl.endTime.errors?.required"
+    >
+      <ion-icon name="information-circle-outline"></ion-icon>
+      Wybierz preferowaną godzinę
+    </span>
+    <ion-button
+      class="ion-margin-top"
+      type="submit"
+      expand="block"
+      color="primary"
+      >Rezerwuj</ion-button
+    >
   </form>
 </ion-content>

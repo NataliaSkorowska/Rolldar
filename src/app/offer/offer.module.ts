@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule, Routes } from '@angular/router';
 import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { newArray } from '@angular/compiler/src/util';
+
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['sign-in']);
 
 const routes: Routes = [

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Blind } from '../offer/blind.model';
-import { BlindService } from '../blind.service';
+import { BlindService } from '../services/blind.service';
 import { NavController } from '@ionic/angular';
 import { IonSlides } from '@ionic/angular';
 

@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-import { FirebaseAuthService } from './firebase-auth.service';
+import { FirebaseAuthService } from './services/firebase-auth.service';
 import {AngularFireDatabaseModule} from '@angular/fire/database'
 import { AngularFireAuthGuardModule } from '@angular/fire/auth-guard';
 import { Camera } from '@ionic-native/camera/ngx';

@@ -3,9 +3,9 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AngularFireAuthGuard, redirectUnauthorizedTo, redirectLoggedInTo, canActivate } from '@angular/fire/auth-guard';
 import { HomePage } from './home/home.page';
 import { ProfilePage } from './profile/profile.page';
-import { FirebaseAuthService } from './firebase-auth.service';
+import { FirebaseAuthService } from './services/firebase-auth.service';
 import { GuardService } from './services/guard.service';
-import { AdminauthService } from './adminauth.service';
+import { AdminauthService } from './services/adminauth.service';
 
 const routes: Routes = [
   { path: 'profile',

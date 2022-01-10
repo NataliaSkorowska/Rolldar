@@ -6,7 +6,7 @@ const FILE_SIZE_UNITS_LONG = ['Bytes', 'Kilobytes', 'Megabytes', 'Gigabytes', 'P
 @Pipe({
     name: 'fileSizePipe'
 })
-export class FileSizeFormatPipe implements PipeTransform {
+export class FileSizePipe implements PipeTransform {
     static forRoot() {
         throw new Error("Method not implemented.");
     }
