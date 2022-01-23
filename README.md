@@ -65,19 +65,33 @@ oraz może przechowywać w aplikacji zdjęcia faktur.
 
 ## Interfejs
 
-1 i 5 funkcjonalność - tworzenie konta i walidacja rejestracji
+1,2,3 funkcjonalność - tworzenie konta, walidacja i przekierowanie po rejestracji
 
 ![Rejestracja](./readmeIMG/Rejestracja.gif) 
 
-2, 4 i 6 funkcjonalność - logowanie klienta, walidacja logowania i przekierowanie po logowaniu
+4,5,6 funkcjonalność - logowanie klienta, walidacja logowania i przekierowanie po logowaniu
 
-![Logowanie klienta](./readmeIMG/LogowanieKlienta.gif) 
+![Logowanie klienta](./readmeIMG/LogowanieKlient.gif) 
 
-3 funkcjonalność - odzyskiwanie hasła i komunikat błędu
+7 funkcjonalność - odzyskiwanie hasła i komunikat błędu
 
 ![Odzyskiwanie hasła](./readmeIMG/OdzyskiwanieHasła.gif) 
 
+9, 10 funkcjonalność - logowanie pracownika
 
+![Logowanie pracownik](./readmeIMG/LogowaniePracownik.gif) 
+
+11,12,13,14 funkcjonalnośc - oferta, wyszukiwanie oferty, szczegóły oferty i karuzela ze zdjęciami
+
+![Oferta](./readmeIMG/Oferta.gif) 
+
+15,16 funkcjonalność - widok menu bocznego, 3 zakładki, możliwość wylogowania
+
+![Menu boczne](./readmeIMG/Menu.gif) 
+
+17, 18 funkcjonalnośc - formularz rezerwacji usługi
+
+![Rezerwacja usługi](./readmeIMG/Rezerwacja.gif) 
 
 ## Uruchomienie
 
