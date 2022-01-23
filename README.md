@@ -35,7 +35,7 @@ oraz może przechowywać w aplikacji zdjęcia faktur.
 | ------- | -------|------|------| -----| ----- |
 | 1 | Funkcjonalne | Logowanie | Tworzenie konta| Użytkownik może założyć nowe konto w aplikacji jako klient po podaniu swojego imienia, nazwiska, adresu email oraz hasła | 1 |
 | 2 | Funkcjonalne |Logowanie| Logowanie klienta | Użytkownik może zalogować się do aplikacji na wcześniej założone konto po podaniu poprawnego adresu email oraz hasła| 1 |
-| 3 | Funkcjonalne |Logowanie | Odzyskiwanie hasła | Użytkownik podając swój adres email w odpowiednim miejscu może wygenerować mail, który będzie zawierał link do formularza umożliwiającego zmianę hasła | 2 |
+| 3 | Funkcjonalne |Logowanie | Odzyskiwanie hasła | Użytkownik podając swój adres email w odpowiednim miejscu może wygenerować mail, który będzie zawierał link do formularza umożliwiającego zmianę hasła, jeśli podany email nie znajduje się w bazie zostanie wyświetlony stosowny komunikat | 2 |
 | 4 | Funkcjonalne |  Logowanie | Walidacja logowania klienta| Jeśli użytkownik podczas próby logowania poda nieprawidłowe hasło lub adres email informacja o tym zostanie wyświetlona pod formularzem| 1 |
 | 5 | Funkcjonalne | Logowanie | Walidacja rejestracji | Jeśli użytkownik podczas wypełniania formularza rejestracji poda dane w nieodpowiednim formacie, lub będzie chciał użyć istniejącego w bazie adresu email informacja o tym zostanie wyświetlona pod formularzem| 1 |
 | 6 | Funkcjonalne | Logowanie | Przekierowanie po logowaniu | Użytkownik po udanym zalogowaniu zostanie przekierowany na stronę z ofertą firmy Rolldar | ---|
@@ -63,6 +63,20 @@ oraz może przechowywać w aplikacji zdjęcia faktur.
 | 28 | Funkcjonalne | Panel pracownika | Widok panelu pracownika | Użytkownik zalogowany jako pracownik znajdujący się na stronie "panel pracownika" widzi dwa przyciski, które po naciśnięciu przekierują go odpowiednio: pierwszy "zamówienia" - do strony zawierającej listę zamówień, drugi "faktury" - do strony zawierającej listę faktur | 1 |
 
 ## Interfejs
+
+1 i 5 funkcjonalność - tworzenie konta i walidacja rejestracji
+
+![Rejestracja](./readmeIMG/Rejestracja.gif) 
+
+2, 4 i 6 funkcjonalność - logowanie klienta, walidacja logowania i przekierowanie po logowaniu
+
+![Logowanie klienta](./readmeIMG/LogowanieKlienta.gif) 
+
+3 funkcjonalność - odzyskiwanie hasła i komunikat błędu
+
+![Odzyskiwanie hasła](./readmeIMG/OdzyskiwanieHasła.gif) 
+
+
 
 ## Uruchomienie
 
