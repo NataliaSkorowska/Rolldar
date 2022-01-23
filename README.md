@@ -20,12 +20,11 @@ oraz może przechowywać w aplikacji zdjęcia faktur.
 | ID | Nazwa | Zastosowanie | Wersja |
 | ------- | -------|------|------| 
 | 1 | Visual Studio Code | Środowisko programistyczne | - |
-| 2 | Ionic Framework | - | 5.4.1 |
-| 3 | Angular | -  | 10.2.0 |
-| 3 | AngularFire |  | 6.0.3 |
-| 4 | Typescript | - |  4.0.3 |
-| 5 | Firebase | - |  7.24.0 |
-| 6 | HTML5 | - |  7.24.0 |
+| 2 | Ionic | Framework aplikacji, struktura projektu | 5.4.1 |
+| 3 | Angular | Framework aplikacji | 10.2.0 |
+| 4 | AngularFire | Komunikacja aplikacji z bazą danych (przechowywanie danych, logowanie) | 6.0.3 |
+| 5 | Firebase | Baza danych |  7.24.0 |
+| 6 | HTML5 | Struktura aplikacji |  7.24.0 |
 | 7 | Figma | Stworzenie prototypu aplikacji |  - |
 
 
