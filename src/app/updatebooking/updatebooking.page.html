@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>Edytuj</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button text="" defaultHref="/bookings/"></ion-back-button>
+      <ion-back-button text="" defaultHref="bookings/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -108,6 +108,7 @@
         Data</ion-label
       >
       <ion-datetime
+        monthShortNames="Sty, Lut, Marz, Kwi, Maj, Czer , Lip , Sie, Wrze, Paź, List, Gru"
         (ionChange)="getDate($event)"
         formControlName="bookingDate"
         [value]="defaultDate"
@@ -121,6 +122,7 @@
       <ion-datetime
         formControlName="startTime"
         displayFormat="HH:mm"
+        hourCycle="h24"
       ></ion-datetime>
     </ion-item>
     <span
@@ -138,6 +140,7 @@
       <ion-datetime
         formControlName="endTime"
         displayFormat="HH:mm"
+        hourCycle="h24"
       ></ion-datetime>
     </ion-item>
     <span

@@ -77,35 +77,12 @@ export class BookingsPage implements OnInit {
       console.log(data);
     });
   }
-  async remove(id) {
-    console.log(id);
-    {
-      const alert = await this.alertCtrl.create({
-        header: "Uwaga",
-        message: "Na pewno chcesz usunąć to zamówienie?",
-        buttons: [
-          {
-            text: "Tak",
-            role: "cancel",
-            handler: () => {
-              this.crudService.delete(id);
-            },
-          },
-          {
-            text: "Anuluj",
-          },
-        ],
-      });
-      await alert.present();
-    }
+
+  remove(id) {
+   this.crudService.delete(id);
   }
 
-  reorderList(e) {
-    console.log(`Item moved ${e.detail.from} to ${e.detail.to}`);
-    let movedItem = this.BookingsBackup.splice(e.detail.from, 1)[0];
-    this.BookingsBackup.splice(e.detail.to, 0, movedItem);
-    e.detail.complete();
-  }
+
 
   goToBookingPage(id: number) {
     this.router.navigate(["updatebooking", id]);

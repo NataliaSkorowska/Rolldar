@@ -153,6 +153,7 @@
         Wybierz dzień</ion-label
       >
       <ion-datetime
+        monthShortNames="Sty, Lut, Marz, Kwi, Maj, Czer , Lip , Sie, Wrze, Paź, List, Gru"
         min="2021-12-12"
         max="2025-01-01"
         (ionChange)="getDate($event)"
@@ -165,6 +166,7 @@
         >Od której masz czas?</ion-label
       >
       <ion-datetime
+        hourCycle="h24"
         formControlName="startTime"
         displayFormat="HH:mm"
       ></ion-datetime>
@@ -181,6 +183,8 @@
         >Do której masz czas?</ion-label
       >
       <ion-datetime
+        monthValues="styczeń, luty, marzec, kwiecień, maj, czerwiec, lipiec, sierpień, wrzesień, październik, listopad, grudzien"
+        hourCycle="h24"
         formControlName="endTime"
         displayFormat="HH:mm"
       ></ion-datetime>
