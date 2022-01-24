@@ -63,6 +63,10 @@ oraz może przechowywać w aplikacji zdjęcia faktur.
 
 ## Interfejs
 
+Widok strony startowej:
+
+![Strona startowa](./readmeIMG/StronaStartowa.png) 
+
 1,2,3 funkcjonalność - tworzenie konta, walidacja i przekierowanie po rejestracji
 
 ![Rejestracja](./readmeIMG/Rejestracja.gif) 
@@ -74,6 +78,10 @@ oraz może przechowywać w aplikacji zdjęcia faktur.
 7 funkcjonalność - odzyskiwanie hasła i komunikat błędu
 
 ![Odzyskiwanie hasła](./readmeIMG/OdzyskiwanieHasła.gif) 
+
+Mail otrzymywany w celu resetu hasła:
+
+![Email - reset hasła](./readmeIMG/EmailResetHasła.jpg) 
 
 9, 10 funkcjonalność - logowanie pracownika
 
@@ -87,21 +95,21 @@ oraz może przechowywać w aplikacji zdjęcia faktur.
 
 ![Menu boczne](./readmeIMG/Menu.gif) 
 
-17, 18 funkcjonalnośc - formularz rezerwacji usługi
+17, 18 funkcjonalność - formularz rezerwacji usługi
 
 ![Rezerwacja usługi](./readmeIMG/Rezerwacja.gif) 
 
-19, 20, 21, 22, 23, 24 - widok listy zamówień, wyszukiwanie, edycja (nadanie statusu) i usuwanie zamówienia
+19, 20, 21, 22, 23, 24 funkcjonalność- widok listy zamówień, wyszukiwanie, edycja (nadanie statusu) i usuwanie zamówienia
 
 ![Zamówienia](./readmeIMG/Zamówienia.gif) 
 
-25, 26, 27 - przeglądanie listy faktur, dodanie zdjęcia faktury i pobranie zdjęcia
+25, 26, 27 funkcjonalność- przeglądanie listy faktur, dodanie zdjęcia faktury i pobranie zdjęcia
 
 ![Faktury](./readmeIMG/Faktury.gif) 
 
-## Uruchomienie
+## Uruchomienie projektu
 
+```
 npm install
-
 ionic serve --lab
-
+```
