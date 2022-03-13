@@ -26,6 +26,7 @@ oraz może przechowywać w aplikacji zdjęcia faktur.
 | 5 | Firebase | Baza danych |  7.24.0 |
 | 6 | HTML5 | Struktura aplikacji |  7.24.0 |
 | 7 | Figma | Stworzenie prototypu aplikacji |  - |
+| 8 | Node.js | Serwer do uruchimienia aplikacji |  14.17.4 |
 
 
 ## Funkcjonalności
