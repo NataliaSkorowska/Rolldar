@@ -37,12 +37,12 @@ export class AdminauthService {
     let user = null;
     
 
-    if (email === 'admin' && pw === 'admin') {
+    if (email === '*' && pw === '*') {
       user = {
         email,
         role: 'ADMIN'
       };
-    } else if (email === 'user' && pw === 'user') {
+    } else if (email === '*' && pw === '*') {
       user = {
         email,
         role: 'USER'
