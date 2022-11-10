@@ -24,7 +24,7 @@ oraz może przechowywać w aplikacji zdjęcia faktur.
 | 3 | Angular | Framework aplikacji | 10.2.0 |
 | 4 | AngularFire | Komunikacja aplikacji z bazą danych (przechowywanie danych, logowanie) | 6.0.3 |
 | 5 | Firebase | Baza danych |  7.24.0 |
-| 6 | HTML5 | Struktura aplikacji |  7.24.0 |
+| 6 | HTML5 | Struktura aplikacji |  - |
 | 7 | Figma | Stworzenie prototypu aplikacji |  - |
 | 8 | Node.js | Serwer do uruchomienia aplikacji |  14.17.4 |
 
